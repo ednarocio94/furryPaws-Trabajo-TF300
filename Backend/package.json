@@ -1,5 +1,5 @@
 {
-  "name": "proyectoclase",
+  "name": "furrytails-trabajo-fn-tf300h",
   "version": "1.0.0",
   "main": "app.js",
   "type": "module",
@@ -8,17 +8,15 @@
     "dev": "nodemon app.js"
   },
   "keywords": [
-    "servicios"
+    "adopcion"
   ],
-  "author": "Edna Rocio Rodriguez",
+  "author": "Edna & Jonathan",
   "license": "ISC",
-  "description": "Proyecto de practica backend con Node",
-  "devDependencies": {
-    "nodemon": "^3.1.7"
-  },
+  "description": "Página de Adopcion",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongoose": "^8.7.3"
+    "mongoose": "^8.7.3",
+    "nodemon": "^3.1.7"
   }
 }

@@ -12,8 +12,8 @@ export async function connectionMongo(){
     // catch -> atrapa los errores 
 
     try{
-        // conectar base de datos - poner nombre con dbName
-        await mongoose.connect(process.env.DB_URL,{dbName:"actividadClase"});
+        // conectar base de datos
+        await mongoose.connect(process.env.DB_URL,{});
         console.log('Conexión exitosa con la base de datos');
     }catch(error){
         console.error('Error de conexión: ' + error);
