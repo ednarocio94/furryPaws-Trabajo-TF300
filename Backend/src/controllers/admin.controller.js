@@ -13,7 +13,7 @@ import bcrypt from "bcryptjs";
 
 
 // --------------------------------------------------
-// Petición POST -> Crear usuarios
+// Petición POST -> Crear admin
 export const createAdmin = async (req, res) => {
   // manejo de errores -> atrapar lo que pueda salir mal
   try {
