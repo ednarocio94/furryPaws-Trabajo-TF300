@@ -1,26 +1,26 @@
 // ACÁ VA LA LÓGICA DE LOS CONTROLADORES PARA LAS PETICIONES HTTP PARA LOS USUARIOS
 // Nos estaremos centrando en las peticiones POST Y GET
 
-// 1. Importar dependencias y módulos que necesitemos
-import { userModel } from "../models/users.model.js";
-// Importar la dependenciade encriptación
+// Dependencias y modulos
+import { userModel } from "../models/user.model.js";
+
+//DependenciaS de encriptación
 import bcrypt from "bcryptjs";
 
 // 2. Crearnos nuestras funciones asíncronas para cada petición
 //function nombreFuncion(){}
 //let nombreFuncion2 = ()=>{}
 
-
 // --------------------------------------------------
 // Petición POST -> Crear usuarios
 export const createUser = async (req, res) => {
-  // manejo de errores -> atrapar lo que pueda salir mal
+  // manejo de errores 
   try {
 
     // Deestructuración -> nos va a permitir acceder a cada una de las variables suministradas por el usuario en el req.body
-    const {fullName, email, password, role} = req.body;
+    const {image, fullName, email, password, role, phone, isAdult, address,preferences} = req.body;
 
-    // password = sancocho;
+    // password = ginebra;
 
     // vamos a encriptar la contraseña
     // .hash -> método para encriptar contraseña
@@ -29,10 +29,16 @@ export const createUser = async (req, res) => {
     const codedPassword = await bcrypt.hash(password, 10);
 
     const newUser = await userModel.create({
+        image,
         fullName,
         email,
         password:codedPassword,
-        role
+        role,
+        phone,
+        isAdult,
+        address,
+        preferences
+
     });
 
     // 201-> se creó correctamente
@@ -44,11 +50,10 @@ export const createUser = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
         mensaje: "Ocurrió un error al crear un usuario",
-        problema: error || error.message
+        problema:  error.message
     });
   }
 };
-
 
 // -----------------------------------------------
 
@@ -78,3 +83,61 @@ export const showUsers = async (req, res) => {
     });
   }
 };
+//-------------------------------------------------------------
+// 1. Usamos  PUT para actualizar los usuarios
+// para actualizar un usuario  -> actualizar por ID
+export const putUserById = async (request, response) => {
+
+  // Esta es la LÓGICA que usamos de la petición  PUT
+  try {
+      let idForPut = request.params.id; //el parámetro id del usuario  que queremos actualizar
+      let dataForUpdate = request.body; // esto nos permite conectar  la información actualizada
+
+   //2 parámetros, primero el id y luego la info actualizada
+      const userUpdated = await userModel.findByIdAndUpdate(idForPut, dataForUpdate);
+
+      // validación cuando el id no es correcto o no existe
+      // !productUpdated -> negación de una variable -> no hay nada en esa variable -> falsa
+      if(!userUpdated){
+          return response.status(404).json({
+              mensaje: 'Lo siento! No se encontró usuario  para actualizar'
+          });
+      }
+
+      return response.status(200).json({
+          mensaje: 'Se actualizó el usuario correctamente',
+          datos: userUpdated
+      });
+
+      
+  } catch (error) {
+      return response.status(400).json({
+          mensaje: 'Ocurrió un error actualizando el usuario',
+          problem: error || error.message 
+      });
+  }
+}
+//---------------------------------------------------------------
+// Usamos la petición DELETE -> para eliminar usuarios ya no necesarios 
+// si necesiramos eliminar un usuario  en particular -> eliminar por ID
+export const deleteUserById = async (request, response) => {
+
+  // LÓGICA DE LA PETICIÓN DELETE
+  try {
+      let idForDelete = request.params.id;
+      // lo que se elimina no lo tenemos que guardar en variables
+      // escuentreme el producto con ese id y elimínelo
+     await userModel.findByIdAndDelete(idForDelete);
+
+      return response.status(200).json({
+          mensaje: ' usuario eliminado exitosamnete'
+      });
+      
+  } catch (error) {
+      return response.status(400).json({
+          mensaje: 'Ocurrió un error al eliminar producto',
+          problem: error.message 
+      });
+  }
+}
+
