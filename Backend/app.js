@@ -6,6 +6,7 @@ import express from "express"; //ECMAS 6
 import dotenv from "dotenv"; //dependencia para manejar variables de entorno
 import { connectionMongo } from "./src/config/dataBase.js";
 import routerUser from "./src/routes/user.routes.js";
+import bodyParser from "body-parser";
 
 
 
@@ -26,6 +27,9 @@ app.use("/usuarios",routerUser)// llamar las rutas
 app.listen(port, ()=>{
     console.log("El servidor está ejecutándose correctamente, en el puerto ", port);
 });
+
+
+
 //---------------------------------------------------------
 
 
