@@ -50,7 +50,7 @@ export const createUser = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
         mensaje: "Ocurrió un error al crear un usuario",
-        problema: error || error.message
+        problema:  error.message
     });
   }
 };
@@ -127,7 +127,7 @@ export const deleteUserById = async (request, response) => {
       let idForDelete = request.params.id;
       // lo que se elimina no lo tenemos que guardar en variables
       // escuentreme el producto con ese id y elimínelo
-     await userModelModel.findByIdAndDelete(idForDelete);
+     await userModel.findByIdAndDelete(idForDelete);
 
       return response.status(200).json({
           mensaje: ' usuario eliminado exitosamnete'
@@ -136,7 +136,7 @@ export const deleteUserById = async (request, response) => {
   } catch (error) {
       return response.status(400).json({
           mensaje: 'Ocurrió un error al eliminar producto',
-          problem: error || error.message 
+          problem: error.message 
       });
   }
 }
