@@ -7,7 +7,7 @@ import {
     adminRejectPet, 
     adminDeletePet, 
     adminGetAllPets 
-} from '../controllers/AdminController.js';
+} from '../controllers/admin.controller.js';
 
 const routerAdmin = express.Router();
 
