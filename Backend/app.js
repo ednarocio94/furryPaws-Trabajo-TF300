@@ -6,9 +6,7 @@ import express from "express"; //ECMAS 6
 import dotenv from "dotenv"; //dependencia para manejar variables de entorno
 import { connectionMongo } from "./src/config/dataBase.js";
 import routerUser from "./src/routes/user.routes.js";
-import bodyParser from "body-parser";
-
-
+import routerAdmin from "./src/routes/admin.routes.js";
 
 
 // 2. configurar el uso de nuestro servidor
@@ -22,6 +20,7 @@ const port = process.env.PORT //6000, 9000
 // Middleware
 app.use(express.json());
 app.use("/usuarios",routerUser)// llamar las rutas 
+app.use("/",routerAdmin)
 
 // 3. Iniciar el servidor
 app.listen(port, ()=>{

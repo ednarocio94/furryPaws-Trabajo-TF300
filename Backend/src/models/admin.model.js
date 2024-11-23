@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 
 // 2. Creamos el esquema de datos para los administradores
 const adminSchema = new mongoose.Schema({
+    image: {type: String},
     fullName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
