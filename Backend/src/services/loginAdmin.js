@@ -53,6 +53,7 @@ const loginAdmin = async (request, response) => {
         const payload = {
             id: adminFound._id,
             name: adminFound.fullName,
+            isAdmin: true
         };
         // GENERAR EL TOKEN -----------------------------------------------
         // pasamos la info del usuario si es cliente o admin, en el payload

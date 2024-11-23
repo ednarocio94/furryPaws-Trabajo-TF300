@@ -1,9 +1,9 @@
 // importar dependencias y módulos 
-import login from "../services/loginService.js";
+import loginAdmin from "../services/loginAdmin.js";
 import express from "express";
 
 // 2. configurar nuestro router de express
-const loginRouter = express.Router();
+const loginAdminRouter = express.Router();
 
 // 3. creamos la ruta -> crear un inicio de sesión 
 // GET -> mostar, leer. obtener
@@ -11,8 +11,8 @@ const loginRouter = express.Router();
 // PUT -> actualizar 
 // DELETE -> Eliminar 
 
-loginRouter.post("/", login);
+loginAdminRouter.post("/", loginAdmin);
 
-export default loginRouter;
+export default loginAdminRouter;
 // Le indico las rutas que se deben utilizar 
 ;
