@@ -40,6 +40,7 @@ const loginAdmin = async (request, response) => {
         const payload = {
             id: adminFound._id,
             name: adminFound.fullName,
+            isAdmin: true
         };
 
         // Generar el token con la información del administrador
