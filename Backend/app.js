@@ -2,7 +2,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { connectionMongo } from './src/config/dataBase.js';
-import mascotasRouter from './routes/MascotaRoutes.js';
+import petsrouter from './src/routes/mascotas.routes.js';
 
 // CONFIGURAR EL USO DE NUESTRO SERVIDOR
 const app = express();
@@ -13,7 +13,7 @@ const port = process.env.PORT || 6000;
 
 // Middleware
 app.use(express.json());
-app.use('/mascotas', mascotasRouter);
+app.use('/mascotas', petsrouter);
 
 // INICIAR EL SERVIDOR
 app.listen(port, () => {

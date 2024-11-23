@@ -1,7 +1,6 @@
 // controllers/MascotaController.js
 
-import { ModeloMascota } from '../modelo/Mascota.js';
-
+import { ModeloMascota } from "../models/mascotas.model.js";
 /**
  * Crear una nueva mascota.
  */
