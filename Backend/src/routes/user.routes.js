@@ -1,34 +1,23 @@
-// 1. Importar controladores y dependencias
-
-//import { createUser, showUsers } from "../controllers/user.controller.js";
-//import express from "express";
-//import auth from "../middleware/auth.js";
-
-
-// 2. Configurar el router
-//export const usersRouter = express.Router();
-
-
-// 3. Nos creamos la ruta para cada petición
-
-// Ruta para el post
-//usersRouter.post("/crear", createUser);
-
-// Ruta para get
-//usersRouter.get("/obtener" ,auth("admin"), showUsers);
-
-//--------------------------------------------------------
+// Importar dependencias y controladores necesarios
 import express from "express";
-import { createUser, showUsers,putUserById, deleteUserById } from "../controllers/user.controller.js";
+import { createUser, showUsers, putUserById, deleteUserById } from "../controllers/user.controller.js";
 
-
-
+// Crear una instancia de Router para manejar rutas de usuarios
 const routerUser = express.Router();
 
-routerUser.post("/crear", createUser);        // Crear usuario
-routerUser.get("/obtener", showUsers); // preguntar a la profe 
-routerUser.put("/actualizar/:id", putUserById); // Actualizar usuario // agregar el el auth para la autenticacion
-routerUser.delete("/eliminar/:id", deleteUserById); // Eliminar usuario
+// Ruta para crear un usuario (POST)
+routerUser.post("/crear", createUser);
 
-export default routerUser; //  hacerlo con cada modelo 
+// Ruta para obtener la lista de usuarios (GET)
+// Se recomienda agregar middleware de autenticación si es necesario (auth("admin"))
+routerUser.get("/obtener", showUsers);
 
+// Ruta para actualizar un usuario por ID (PUT)
+// Agregar middleware de autenticación en el futuro (auth)
+routerUser.put("/actualizar/:id", putUserById);
+
+// Ruta para eliminar un usuario por ID (DELETE)
+routerUser.delete("/eliminar/:id", deleteUserById);
+
+// Exportar el Router para usarlo en el resto de la aplicación
+export default routerUser;

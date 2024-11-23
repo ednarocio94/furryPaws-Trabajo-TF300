@@ -15,4 +15,4 @@ loginAdminRouter.post("/", loginAdmin);
 
 export default loginAdminRouter;
 // Le indico las rutas que se deben utilizar 
-;
+

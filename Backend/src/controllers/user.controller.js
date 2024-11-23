@@ -1,33 +1,17 @@
-// ACÁ VA LA LÓGICA DE LOS CONTROLADORES PARA LAS PETICIONES HTTP PARA LOS USUARIOS
-// Nos estaremos centrando en las peticiones POST Y GET
+// Controladores para manejar las peticiones HTTP de usuarios (POST, GET, PUT, DELETE)
+import { userModel } from "../models/user.model.js"; // Importación del modelo de usuario
+import bcrypt from "bcryptjs"; // Dependencia para encriptación de contraseñas
 
-// Dependencias y modulos
-import { userModel } from "../models/user.model.js";
-
-//DependenciaS de encriptación
-import bcrypt from "bcryptjs";
-
-// 2. Crearnos nuestras funciones asíncronas para cada petición
-//function nombreFuncion(){}
-//let nombreFuncion2 = ()=>{}
-
-// --------------------------------------------------
-// Petición POST -> Crear usuarios
+// Función para crear un nuevo usuario (POST)
 export const createUser = async (req, res) => {
-    // manejo de errores 
     try {
-
-        // Deestructuración -> nos va a permitir acceder a cada una de las variables suministradas por el usuario en el req.body
+        // Desestructuración del cuerpo de la petición para obtener los datos del usuario
         const { image, fullName, email, password, role, phone, isAdult, address, preferences } = req.body;
 
-        // password = ginebra;
-
-        // vamos a encriptar la contraseña
-        // .hash -> método para encriptar contraseña
-        // 2 parámetros, 1. contraseña a encriptar
-        //               2. # que determina cuán segura es la contraseña encriptada -> 8-10
+        // Encriptación de la contraseña antes de guardarla
         const codedPassword = await bcrypt.hash(password, 10);
 
+        // Creación del nuevo usuario en la base de datos
         const newUser = await userModel.create({
             image,
             fullName,
@@ -38,16 +22,16 @@ export const createUser = async (req, res) => {
             isAdult,
             address,
             preferences
-
         });
 
-        // 201-> se creó correctamente
+        // Respuesta exitosa con el nuevo usuario creado
         return res.status(201).json({
             mensaje: "Usuario creado correctamente",
             datos: newUser
         });
 
     } catch (error) {
+        // Manejo de errores en caso de fallar al crear el usuario
         return res.status(400).json({
             mensaje: "Ocurrió un error al crear un usuario",
             problema: error.message
@@ -55,89 +39,86 @@ export const createUser = async (req, res) => {
     }
 };
 
-// -----------------------------------------------
-
-// Petición GET -> Mostrar todos los usuarios
+// Función para mostrar todos los usuarios (GET)
 export const showUsers = async (req, res) => {
-    // manejo de errores -> atrapar lo que pueda salir mal
     try {
-        // Encontrar TODOS los usuarios
+        // Buscar todos los usuarios en la base de datos
         let users = await userModel.find();
-        // validación si no se encuentran usuarios almacenados
+
+        // Si no se encuentran usuarios, se responde con un mensaje adecuado
         if (users.length === 0) {
             return res.status(200).json({
                 mensaje: "No hay usuarios almacenados"
-            })
+            });
         }
 
+        // Responder con la lista de usuarios encontrados
         return res.status(200).json({
-            menasaje: "Se encontraron usuarios almacenados",
+            mensaje: "Se encontraron usuarios almacenados",
             numeroUsuarios: users.length,
             datos: users
-        })
+        });
 
     } catch (error) {
+        // Manejo de errores si algo sale mal al consultar los usuarios
         return res.status(400).json({
             mensaje: "Ocurrió un error al mostrar los usuarios",
             problema: error || error.message
         });
     }
 };
-//-------------------------------------------------------------
-// 1. Usamos  PUT para actualizar los usuarios
-// para actualizar un usuario  -> actualizar por ID
+
+// Función para actualizar un usuario por su ID (PUT)
 export const putUserById = async (request, response) => {
-
-    // Esta es la LÓGICA que usamos de la petición  PUT
     try {
-        let idForPut = request.params.id; //el parámetro id del usuario  que queremos actualizar
-        let dataForUpdate = request.body; // esto nos permite conectar  la información actualizada
+        // Obtener el ID del usuario a actualizar desde los parámetros de la petición
+        let idForPut = request.params.id;
+        let dataForUpdate = request.body; // Información nueva a actualizar
 
-        //2 parámetros, primero el id y luego la info actualizada
+        // Actualizar el usuario con el ID y la nueva información
         const userUpdated = await userModel.findByIdAndUpdate(idForPut, dataForUpdate);
 
-        // validación cuando el id no es correcto o no existe
-        // !productUpdated -> negación de una variable -> no hay nada en esa variable -> falsa
+        // Validar si el usuario no fue encontrado o no se pudo actualizar
         if (!userUpdated) {
             return response.status(404).json({
-                mensaje: 'Lo siento! No se encontró usuario  para actualizar'
+                mensaje: 'No se encontró usuario para actualizar'
             });
         }
 
+        // Responder con el usuario actualizado
         return response.status(200).json({
-            mensaje: 'Se actualizó el usuario correctamente',
+            mensaje: 'Usuario actualizado correctamente',
             datos: userUpdated
         });
 
-
     } catch (error) {
+        // Manejo de errores si algo falla al actualizar el usuario
         return response.status(400).json({
-            mensaje: 'Ocurrió un error actualizando el usuario',
-            problem: error || error.message
+            mensaje: 'Ocurrió un error al actualizar el usuario',
+            problema: error || error.message
         });
     }
-}
-//---------------------------------------------------------------
-// Usamos la petición DELETE -> para eliminar usuarios ya no necesarios 
-// si necesiramos eliminar un usuario  en particular -> eliminar por ID
-export const deleteUserById = async (request, response) => {
+};
 
-    // LÓGICA DE LA PETICIÓN DELETE
+// Función para eliminar un usuario por su ID (DELETE)
+export const deleteUserById = async (request, response) => {
     try {
+        // Obtener el ID del usuario a eliminar desde los parámetros de la petición
         let idForDelete = request.params.id;
-        // lo que se elimina no lo tenemos que guardar en variables
-        // escuentreme el producto con ese id y elimínelo
+
+        // Eliminar el usuario con el ID especificado
         await userModel.findByIdAndDelete(idForDelete);
 
+        // Responder indicando que el usuario fue eliminado exitosamente
         return response.status(200).json({
-            mensaje: ' usuario eliminado exitosamnete'
+            mensaje: 'Usuario eliminado exitosamente'
         });
 
     } catch (error) {
+        // Manejo de errores si algo falla al eliminar el usuario
         return response.status(400).json({
-            mensaje: 'Ocurrió un error al eliminar producto',
-            problem: error.message
+            mensaje: 'Ocurrió un error al eliminar el usuario',
+            problema: error.message
         });
     }
-}
-
+};
