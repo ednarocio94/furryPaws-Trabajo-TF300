@@ -1,5 +1,4 @@
 // 1. importar dependencias y modulos 
-import { json, request, response } from "express";
 import { verifyToken } from "../lib/jwt.js";
 
 // 2. Crearnos el MIDDLEWARE que nos permita usar la función para verificar el token

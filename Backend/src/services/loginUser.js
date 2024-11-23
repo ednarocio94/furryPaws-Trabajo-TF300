@@ -1,105 +1,76 @@
 // En este archivo estaremos haciendo toda la lógica necesaria para gestionar los inicios de sesión de los usuarios}
 // PUEDE QUE ESTA LÓGICA CAMBIE PARA CADA PROYECTO FINAL
 
-
 // 1. Importar dependencias y módulos
 // necesitamos el modelo para poder ir a la base de datos y verificar correo y contraseña
-import { userModel } from "../models/users.model.js";
+import { userModel } from "../models/user.model.js";
 // importar la función que nos creamos para generar tokens
 import { generateToken } from "../lib/jwt.js";
 // Para poder comparar la contraseña que ingreso con la encriptada, necesito la dependencia bcrypjs
-import bcrypt from 'bcryptjs';
-
+import bcrypt from "bcryptjs";
 
 // 2. Nos creamos una función para gestionar el inicio de sesión
 
-const login = async (request, response) => {
-
+const loginUser = async (request, response) => {
     // Manejos de los errores
 
     // Cuando iniciemos sesión satisfactoriamente y se genera el token
     try {
-
         // VALIDACIÓN 1: CORREO ---------------------------------------------------------
-        const {emailLogin, passwordLogin} = request.body;
+        const { emailLogin, passwordLogin } = request.body;
 
         // 1. buscar si emailLogin existe en la base de datos
         // Me devuelve el usuario y toda su información y me la guarda en la variables
         const userFound = await userModel.findOne({
-            email: emailLogin
+            email: emailLogin,
         });
 
         // acá indicamos qué passa si no se encuentra emailLogin en la base de datos
-        if(!userFound){
+        if (!userFound) {
             // 404 -> no encontrado
-            return response.status(404).json({mensaje: 'Usuario no encontrado, por favor registrarse'});
+            return response
+                .status(404)
+                .json({ mensaje: "Usuario no encontrado, por favor registrarse" });
         }
 
         // VALIDACIÓN 2: CONTRASEÑA ------------------------------------------------------
         //  Comparar passwordLogin con la contraseña almacenada en la base de datos
         // true or false
         // .compare -> 2 parámetros, 1. passwordLogin y 2. la contraseña de mi usuario encontrado en la base de datos
-        const isValidPassword = await bcrypt.compare(passwordLogin, userFound.password);
+        const isValidPassword = await bcrypt.compare(
+            passwordLogin,
+            userFound.password
+        );
 
-        if(!isValidPassword){
+        if (!isValidPassword) {
             // 401-> no autorizado
-            return response.status(401).json({mensaje: 'Contraseña incorrecta'});
+            return response.status(401).json({ mensaje: "Contraseña incorrecta" });
         }
 
         // Validación 3
         // VERIFICAR PERMISOS ----------------------------------------------------------
         // TODOS MIS USUARIOS TENGAS ESTA INFO EN SU TOKEN
         const payload = {
-            id:userFound._id,
-            name: userFound.fullName
-        }
-
-        /*
-            payload si es cliente
-            {
-                id: 6452135145748,
-                name: pepito
-            }
-        
-        */
-
-        // Pero si es administrador, enviar ese rol en el payload
-        if(userFound.role === 'admin'){
-            // agregarle la propiedad isAdmin = true, al payload que escribí antes
-            payload.isAdmin = true;
-        }
-
-        /*
-            payload si es administradores
-            {
-                id: 6452135145749,
-                name: pepitoAdmin,
-                isAdmin = true
-            }
-        
-        */
-
+            id: userFound._id,
+            name: userFound.fullName,
+        };
         // GENERAR EL TOKEN -----------------------------------------------
         // pasamos la info del usuario si es cliente o admin, en el payload
         const token = await generateToken(payload);
 
         // Si TODO salio bien, las credenciales son correctas, y se generó token
         return response.status(200).json({
-            mensaje: 'Inicio de sesión exitoso',
-            tokenGenerado: token //ESTO ES UNA MALA PRÁCTICA, SÓLO LO HACEMOS PARA PROBAR
+            mensaje: "Inicio de sesión exitoso",
+            tokenGenerado: token, //ESTO ES UNA MALA PRÁCTICA, SÓLO LO HACEMOS PARA PROBAR
         });
-
-        
     } catch (error) {
-
         // Cuando no se pudo iniciar sesión por algún error y NO se genera token
         return response.status(400).json({
-            mensaje: 'Hubo un error al iniciar sesión',
-            error: error.message || error
+            mensaje: "Hubo un error al iniciar sesión",
+            error: error.message || error,
         });
     }
+};
 
-}
- 
-// 3. exportar la función 
-export default login;
+// 3. exportar la función
+export default loginUser;
