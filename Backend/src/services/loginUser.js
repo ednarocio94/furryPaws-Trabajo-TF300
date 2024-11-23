@@ -1,70 +1,43 @@
-// En este archivo estaremos haciendo toda la lógica necesaria para gestionar los inicios de sesión de los usuarios}
-// PUEDE QUE ESTA LÓGICA CAMBIE PARA CADA PROYECTO FINAL
+// Este archivo contiene la lógica para gestionar los inicios de sesión de los usuarios.
+// Nota: Esta lógica puede variar dependiendo de los requerimientos del proyecto.
 
-// 1. Importar dependencias y módulos
-// necesitamos el modelo para poder ir a la base de datos y verificar correo y contraseña
-import { userModel } from "../models/user.model.js";
-// importar la función que nos creamos para generar tokens
-import { generateToken } from "../lib/jwt.js";
-// Para poder comparar la contraseña que ingreso con la encriptada, necesito la dependencia bcrypjs
-import bcrypt from "bcryptjs";
+// Importar dependencias y módulos necesarios
+import { userModel } from "../models/user.model.js"; // Modelo para interactuar con la base de datos.
+import { generateToken } from "../lib/jwt.js"; // Función para generar tokens JWT.
+import bcrypt from "bcryptjs"; // Biblioteca para comparar contraseñas encriptadas.
 
-// 2. Nos creamos una función para gestionar el inicio de sesión
-
+// Función para gestionar el inicio de sesión
 const loginUser = async (request, response) => {
-    // Manejos de los errores
-
-    // Cuando iniciemos sesión satisfactoriamente y se genera el token
     try {
-        // VALIDACIÓN 1: CORREO ---------------------------------------------------------
+        // Extraer email y contraseña del cuerpo de la solicitud
         const { emailLogin, passwordLogin } = request.body;
 
-        // 1. buscar si emailLogin existe en la base de datos
-        // Me devuelve el usuario y toda su información y me la guarda en la variables
-        const userFound = await userModel.findOne({
-            email: emailLogin,
-        });
-
-        // acá indicamos qué passa si no se encuentra emailLogin en la base de datos
+        // Validación 1: Verificar si el correo existe en la base de datos
+        const userFound = await userModel.findOne({ email: emailLogin });
         if (!userFound) {
-            // 404 -> no encontrado
-            return response
-                .status(404)
-                .json({ mensaje: "Usuario no encontrado, por favor registrarse" });
+            return response.status(404).json({ mensaje: "Usuario no encontrado, por favor registrarse" });
         }
 
-        // VALIDACIÓN 2: CONTRASEÑA ------------------------------------------------------
-        //  Comparar passwordLogin con la contraseña almacenada en la base de datos
-        // true or false
-        // .compare -> 2 parámetros, 1. passwordLogin y 2. la contraseña de mi usuario encontrado en la base de datos
-        const isValidPassword = await bcrypt.compare(
-            passwordLogin,
-            userFound.password
-        );
-
+        // Validación 2: Comparar la contraseña ingresada con la almacenada en la base de datos
+        const isValidPassword = await bcrypt.compare(passwordLogin, userFound.password);
         if (!isValidPassword) {
-            // 401-> no autorizado
             return response.status(401).json({ mensaje: "Contraseña incorrecta" });
         }
 
-        // Validación 3
-        // VERIFICAR PERMISOS ----------------------------------------------------------
-        // TODOS MIS USUARIOS TENGAS ESTA INFO EN SU TOKEN
+        // Validación 3: Generar un token con la información del usuario
         const payload = {
             id: userFound._id,
             name: userFound.fullName,
         };
-        // GENERAR EL TOKEN -----------------------------------------------
-        // pasamos la info del usuario si es cliente o admin, en el payload
         const token = await generateToken(payload);
 
-        // Si TODO salio bien, las credenciales son correctas, y se generó token
+        // Respuesta exitosa con token generado (solo para pruebas, evitar en producción)
         return response.status(200).json({
             mensaje: "Inicio de sesión exitoso",
-            tokenGenerado: token, //ESTO ES UNA MALA PRÁCTICA, SÓLO LO HACEMOS PARA PROBAR
+            tokenGenerado: token, // Nota: Exponer el token puede ser inseguro en producción.
         });
     } catch (error) {
-        // Cuando no se pudo iniciar sesión por algún error y NO se genera token
+        // Manejo de errores durante el proceso de inicio de sesión
         return response.status(400).json({
             mensaje: "Hubo un error al iniciar sesión",
             error: error.message || error,
@@ -72,5 +45,5 @@ const loginUser = async (request, response) => {
     }
 };
 
-// 3. exportar la función
+// Exportar la función
 export default loginUser;

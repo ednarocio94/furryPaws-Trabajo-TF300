@@ -1,6 +1,3 @@
-// El archivo app.js -> es el archivo de ejecución de nuestroaplicativo web
-// Acá vas a configurar nuestro servidor con EXPRESS y vamos a gestionar todo lo relacionado con la lógica de negocio -> conexion base de datos, peticiones, respuestas
-
 // 1. IMPORTAR LAS DEPENDENCIAS Y MÓDULOS QUE NECESITAMOS
 import express from "express"; //ECMAS 6
 import dotenv from "dotenv"; //dependencia para manejar variables de entorno
@@ -9,7 +6,7 @@ import routerUser from "./src/routes/user.routes.js";
 import routerAdmin from "./src/routes/admin.routes.js";
 import petsrouter from "./src/routes/mascotas.routes.js";
 
-// CONFIGURAR EL USO DE NUESTRO SERVIDOR
+// 2. CONFIGURAR EL USO DE NUESTRO SERVIDOR
 const app = express();
 dotenv.config();
 connectionMongo();
@@ -30,7 +27,7 @@ app.listen(port, ()=>{
 
 
 
-//---------------------------------------------------------
+
 
 
 

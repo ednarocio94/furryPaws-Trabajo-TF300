@@ -1,59 +1,54 @@
-// 1. importar dependencias y modulos 
+// Importar la función para verificar el token JWT
 import { verifyToken } from "../lib/jwt.js";
 
-// 2. Crearnos el MIDDLEWARE que nos permita usar la función para verificar el token
-// 2.1 Verigficar que existe un token generado 
-// 2.2 Verificar que el token sea permitido, que tenga la estructura alfa númerica 
-// 2.3 Validar el rol -> Verificar permisos
+// Crear el middleware de autenticación
+// Este middleware se encarga de verificar el token y validar el rol del usuario
+function auth (requiredRol) { 
+    return async (request, response, next) => {
+        // 1. Verificar si existe un token en los encabezados de la solicitud
+        let token = request.headers["authorization"];
+        console.log("Token obtenido de la cabecera: " + token);
+        
+        // Si no existe el token, se retorna un error 401
+        if (!token) {
+            return response.status(401).json({
+                mensaje: "No se encontró token, por favor proporcione uno."
+            });
+        }
 
-function auth (requiredRol) { // esta es una funtion declarativa "ojo"
-        return async (request, response, next) => {
-            // Verificación 1: Existencia del token --------------
-            // Aqui estamos accediendo al token generando en caso si existiera 
-            let token = request.headers["authorization"];
-            console.log ( " token obtenido de la cabecera" + token);
-            if (!token){
-                return response.status(401).json({
-                    mensaje: "no se encontró token,  sorry! "
-                })
-                
-            }
+        // 2. Extraer el token del formato "Bearer token"
+        token = token.split(" ")[1]; // Eliminar el "Bearer" y dejar solo el token
+        console.log("Token después de separarlo del Bearer: " + token);
 
-        // Verificación 2: Que el token sea permitido
-        // bearer eweeewewewewewewr4rregregtrg
-        // vamos a quitar el bearer para poder verificar bien el token 
-        token = token.split(" ")[1];
-        console.log("Token despues de separalo del bearer" + token);
-
-        // Manejo de errores
+        // 3. Verificar la validez del token
         try {
+            // Decodificar el token para obtener los datos del usuario
             const decoded = await verifyToken(token);
-            console.log("token decodificado" , decoded);
-            // Validación 3: Verificar rol 
-            // si se requiere arol de admin -> requiredRole === "admin"
-            // Pero si el usuario NO es admin 
-            // Mensaje de que no tiene permisos para esta petición
-            if(requiredRol === "admin" && !decoded.isAdmin ){
+            console.log("Token decodificado: ", decoded);
+
+            // 4. Validar el rol del usuario
+            // Si se requiere un rol "admin" y el token no pertenece a un administrador, se niega el acceso
+            if (requiredRol === "admin" && !decoded.isAdmin) {
                 return response.status(401).json({
-                    mensaje: " acceso no permitido, sorry! no es administrador"
-                })
-
+                    mensaje: "Acceso no permitido. Se requiere rol de administrador."
+                });
             }
-        // es guardar la info decodificada en la petición
-        request. user = decoded;
 
-        }catch (error){
-            return response.status(400).json ({
-            mensaje: "fallo la autenticación del token",
-            problema: error.message || error
-            });  
+            // 5. Guardar la información decodificada en la solicitud para acceder a ella en siguientes pasos
+            request.user = decoded;
+
+        } catch (error) {
+            // Si la verificación del token falla, se retorna un error 400
+            return response.status(400).json({
+                mensaje: "Falló la autenticación del token",
+                problema: error.message || error
+            });
         }
-        // indica que debe continuar con el siguiente proceso
+
+        // 6. Si todo está correcto, continuar con el siguiente middleware o controlador
         next();
-        }
+    }
 }
 
-
-// 3. Exportarlo -> asi exportarmos o solo le ponemos export a la function anterior 
-
-export default auth; 
+// Exportar el middleware para su uso en otras partes de la aplicación
+export default auth;

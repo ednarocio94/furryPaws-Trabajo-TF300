@@ -1,70 +1,57 @@
-// En este archivo estaremos haciendo toda la lógica necesaria para gestionar los inicios de sesión de los usuarios}
-// PUEDE QUE ESTA LÓGICA CAMBIE PARA CADA PROYECTO FINAL
+// Lógica para gestionar el inicio de sesión de administradores.
+// Esta lógica incluye validación de credenciales, generación de token y manejo de errores.
 
-// 1. Importar dependencias y módulos
-// necesitamos el modelo para poder ir a la base de datos y verificar correo y contraseña
+// Importar dependencias y módulos necesarios
+// Modelo de administrador para acceder a los datos de la base
 import { adminModel } from "../models/admin.model.js";
-// importar la función que nos creamos para generar tokens
+// Función personalizada para generar tokens de autenticación
 import { generateToken } from "../lib/jwt.js";
-// Para poder comparar la contraseña que ingreso con la encriptada, necesito la dependencia bcrypjs
+// Dependencia para comparar contraseñas ingresadas con las almacenadas de forma segura
 import bcrypt from "bcryptjs";
 
-// 2. Nos creamos una función para gestionar el inicio de sesión
-
+// Función principal para manejar el inicio de sesión
 const loginAdmin = async (request, response) => {
-    // Manejos de los errores
-
-    // Cuando iniciemos sesión satisfactoriamente y se genera el token
     try {
-        // VALIDACIÓN 1: CORREO ---------------------------------------------------------
+        // Extraer correo y contraseña del cuerpo de la solicitud
         const { emailLogin, passwordLogin } = request.body;
 
-        // 1. buscar si emailLogin existe en la base de datos
-        // Me devuelve el usuario y toda su información y me la guarda en la variables
-        const adminFound = await adminModel.findOne({
-            email: emailLogin,
-        });
+        // Validación 1: Verificar si el correo existe en la base de datos
+        const adminFound = await adminModel.findOne({ email: emailLogin });
 
-        // acá indicamos qué passa si no se encuentra emailLogin en la base de datos
+        // Si no se encuentra el correo, devolver una respuesta con código 404
         if (!adminFound) {
-            // 404 -> no encontrado
             return response
                 .status(404)
                 .json({ mensaje: "Usuario no encontrado, por favor registrarse" });
         }
 
-        // VALIDACIÓN 2: CONTRASEÑA ------------------------------------------------------
-        //  Comparar passwordLogin con la contraseña almacenada en la base de datos
-        // true or false
-        // .compare -> 2 parámetros, 1. passwordLogin y 2. la contraseña de mi usuario encontrado en la base de datos
+        // Validación 2: Comparar la contraseña ingresada con la almacenada
         const isValidPassword = await bcrypt.compare(
             passwordLogin,
             adminFound.password
         );
 
+        // Si la contraseña no coincide, devolver una respuesta con código 401
         if (!isValidPassword) {
-            // 401-> no autorizado
             return response.status(401).json({ mensaje: "Contraseña incorrecta" });
         }
 
-        // Validación 3
-        // VERIFICAR PERMISOS ----------------------------------------------------------
-        // TODOS MIS USUARIOS TENGAS ESTA INFO EN SU TOKEN
+        // Validación 3: Generar un token de autenticación con la información del administrador
         const payload = {
             id: adminFound._id,
             name: adminFound.fullName,
         };
-        // GENERAR EL TOKEN -----------------------------------------------
-        // pasamos la info del usuario si es cliente o admin, en el payload
+
+        // Generar el token con la información del administrador
         const token = await generateToken(payload);
 
-        // Si TODO salio bien, las credenciales son correctas, y se generó token
+        // Responder con éxito si las credenciales son correctas y se generó el token
         return response.status(200).json({
             mensaje: "Inicio de sesión exitoso",
-            tokenGenerado: token, //ESTO ES UNA MALA PRÁCTICA, SÓLO LO HACEMOS PARA PROBAR
+            tokenGenerado: token, // NOTA: En producción, evita exponer el token directamente.
         });
     } catch (error) {
-        // Cuando no se pudo iniciar sesión por algún error y NO se genera token
+        // Manejo de errores en caso de fallos en el inicio de sesión
         return response.status(400).json({
             mensaje: "Hubo un error al iniciar sesión",
             error: error.message || error,
@@ -72,5 +59,5 @@ const loginAdmin = async (request, response) => {
     }
 };
 
-// 3. exportar la función
+// Exportar la función para que esté disponible en otros módulos
 export default loginAdmin;

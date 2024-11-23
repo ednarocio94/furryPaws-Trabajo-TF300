@@ -1,18 +1,14 @@
-// importar dependencias y módulos 
+// Importación de servicio de inicio de sesión y módulo express
 import login from "../services/loginService.js";
 import express from "express";
 
-// 2. configurar nuestro router de express
+// Configuración del router para el inicio de sesión
 const loginRouter = express.Router();
 
-// 3. creamos la ruta -> crear un inicio de sesión 
-// GET -> mostar, leer. obtener
-// POST -> Crear
-// PUT -> actualizar 
-// DELETE -> Eliminar 
-
+// Ruta POST para gestionar el inicio de sesión
+// Al recibir una solicitud POST, se invoca el servicio de inicio de sesión
 loginRouter.post("/", login);
 
+// Exportación del router para su uso en otros módulos
 export default loginRouter;
-// Le indico las rutas que se deben utilizar 
-;
+
