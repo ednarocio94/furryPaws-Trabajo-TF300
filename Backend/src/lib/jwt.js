@@ -5,6 +5,7 @@ dotenv.config();
 
 // Configurar la clave secreta a partir de las variables de entorno (.env)
 const key = process.env.SECRET_KEY;
+console.log(key);
 
 // Función para generar un token JWT
 // El payload contiene la información del usuario que se va a incluir en el token

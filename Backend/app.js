@@ -5,6 +5,8 @@ import { connectionMongo } from "./src/config/dataBase.js";
 import routerUser from "./src/routes/user.routes.js";
 import routerAdmin from "./src/routes/admin.routes.js";
 import petsrouter from "./src/routes/mascotas.routes.js";
+import loginAdminRouter from "./src/routes/loginAdmin.routes.js";
+import loginUserRouter from "./src/routes/loginUser.routes.js";
 
 // 2. CONFIGURAR EL USO DE NUESTRO SERVIDOR
 const app = express();
@@ -18,7 +20,9 @@ const port = process.env.PORT || 6000;
 app.use(express.json());
 app.use("/usuarios",routerUser)// llamar las rutas 
 app.use("/",routerAdmin)
-app.use('/mascotas', petsrouter);
+app.use("/mascotas", petsrouter);
+app.use("/loginAdmin", loginAdminRouter);
+app.use("/loginUser", loginUserRouter);
 
 // 3. Iniciar el servidor
 app.listen(port, ()=>{
