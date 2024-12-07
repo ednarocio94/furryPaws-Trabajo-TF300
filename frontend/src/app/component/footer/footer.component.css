@@ -1,9 +1,11 @@
 /* Main Footer Styles */
 .footer {
   font-family: Arial, sans-serif;
+  margin: 0;
+  width: 100%;
 }
 
-/*Background */
+/* Background */
 .bg-light-blue {
   background-color: #a8c8f0;
   border-radius: 8px;
@@ -26,17 +28,6 @@
 .social-link:hover {
   color: #007bff;
   text-decoration: underline;
-}
-
-/*Margins */
-@media (max-width: 768px) {
-  .footer {
-    padding: 10px;
-  }
-
-  .social-link {
-    font-size: 12px;
-  }
 }
 
 /* Copyright */

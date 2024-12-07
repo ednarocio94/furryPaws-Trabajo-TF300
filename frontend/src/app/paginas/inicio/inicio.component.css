@@ -1,0 +1,170 @@
+/* Definición de los colores para una estética amigable */
+:root {
+    --primary-color: #FF6F61; /* Color cálido (para destacar botones y elementos importantes) */
+    --secondary-color: #4A4A4A; /* Gris oscuro (para textos secundarios) */
+    --background-color: #F9F9F9; /* Fondo suave y limpio */
+    --text-color: #000000; /* Texto principal más oscuro para mejor legibilidad */
+    --btn-color: #28A745; /* Verde optimista */
+    --btn-text-color: #fff; /* Blanco para texto en botones */
+    --highlight-color: #FFD700; /* Dorado para destacar elementos importantes */
+    --border-radius: 12px; /* Bordes más suaves */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
+    --hero-bg-color: #f6f6f6; /* Fondo suave */
+    --card-bg-color: #ffffff; /* Fondo blanco para las tarjetas */
+    --section-bg: #F3F3F3; /* Fondo intermedio para cada sección */
+}
+
+/* Estilo global del body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna y clara */
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Sección principal */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 5%;
+    background-color: var(--background-color);
+}
+
+/* Contenedor de las secciones con transiciones suaves */
+section {
+    margin-bottom: 40px;
+    padding: 40px;
+    background-color: var(--section-bg); /* Fondo intermedio para cada sección */
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease-in-out;
+    max-width: 1200px; /* Limita el ancho de cada sección */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Estilo para los títulos de las secciones */
+h2, h3 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Subtítulos de la sección */
+h3 {
+    font-size: 2.2rem;
+    color: var(--secondary-color);
+}
+
+/* Textos en párrafos con márgenes generosos */
+p {
+    text-align: justify;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: var(--secondary-color);
+}
+
+/* Listas con íconos atractivos */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 18px;
+    padding-left: 28px;
+    position: relative;
+    font-size: 1.3rem;
+}
+
+ul li::before {
+    content: "🐾";
+    color: var(--highlight-color);
+    font-size: 1.6rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Estilo de las citas (blockquote) para testimonios o mensajes */
+blockquote {
+    font-style: italic;
+    background: var(--hero-bg-color);
+    padding: 30px;
+    border-left: 6px solid var(--primary-color);
+    margin: 20px 0;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    line-height: 1.8;
+    border-radius: 8px;
+    font-weight: normal; /* Asegura que el texto no esté demasiado delgado */
+}
+
+/* Resaltar texto dentro de las citas (blockquotes) */
+.highlighted {
+    background-color: #87CEEB; /* Azul claro para resaltar */
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilo de los botones */
+.cta-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--btn-text-color);
+    background: var(--btn-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+
+.cta-btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección de testimonios con un fondo claro */
+.testimonios {
+    background: var(--card-bg-color);
+    padding: 30px;
+    box-shadow: var(--shadow-medium);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+/* Estilo de las citas en testimonios */
+.testimonios blockquote {
+    background: var(--card-bg-color);
+    border-left: 6px solid var(--highlight-color);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Sección de contacto con un fondo cálido */
+.contacto {
+    background: #e2f8e3;
+    padding: 40px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    margin-top: 40px;
+}
