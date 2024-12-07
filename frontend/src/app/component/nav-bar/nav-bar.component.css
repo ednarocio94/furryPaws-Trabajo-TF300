@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /* Estilo del Navbar / */
 
 :root {
@@ -17,9 +15,21 @@
 
 /* -------- Nav Bar -------- */
 
+.contenedor-navBar{
+  justify-content: space-around;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+
 .mi-logo{
-  height: 75px;
-  width: 150px;
+  height: auto;
+  width: auto;
+}
+
+.perrito{
+  height: 9vh;
+  width: auto;
 }
 
 .nav-item{
@@ -30,7 +40,6 @@
 
 .navbar-nav{
   gap: 10vw;
-  
 }
 
 .estilo-nav:hover {
@@ -42,4 +51,3 @@
   background-color: #1a8510;
   
 }
->>>>>>> origin/edna
