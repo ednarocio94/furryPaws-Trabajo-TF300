@@ -1,33 +1,39 @@
-/* Color of the links BEFORE scroll */
-.navbar-scroll .nav-link,
-.navbar-scroll .fa-bars,
-.navbar-scroll .navar-brand {
-  color: #4f4f4f;
+/* Estilo del Navbar / */
+
+:root {
+  /* tipografía */
+  --fuente1: "Figtree", serif;
+  --fuente2: "IBM Plex Mono", monospace;
+  /* colores */
+  --color-primary: #000000;
+  --color-secundary: #ffffff;
+  --color-1: #1a8510;
+  --color-2: #012A4A;
+  --color-3: #A3CEF1;
+  --color-4: #FFD235;
 }
 
-.navbar-scroll .nav-link:hover {
-  color: #1266f1;
+/* -------- Nav Bar -------- */
+
+.mi-logo{
+  height: 75px;
+  width: 150px;
 }
 
-/* Color of the links AFTER scroll */
-.navbar-scrolled .nav-link,
-.navbar-scrolled .fa-bars,
-.navbar-scrolled .navar-brand {
-  color: #4f4f4f;
+.nav-item{
+  font-family: var(--fuente1);
+  font-size: x-large;
+  font-weight: bold;
 }
 
-/* Color of the navbar AFTER scroll */
-.navbar-scroll,
-.navbar-scrolled {
-  background-color: #fff;
+.navbar-nav{
+  gap: 10vw;
+  
 }
 
-/* An optional height of the navbar AFTER scroll */
-.navbar.navbar-scroll.navbar-scrolled {
-  padding-top: 5px;
-  padding-bottom: 5px;
+.estilo-nav:hover {
+  color:#A3CEF1;
+
 }
 
-body {
-  background-color: #eee;
-}
+
