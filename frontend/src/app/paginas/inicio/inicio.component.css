@@ -1,170 +1,232 @@
-/* Definición de los colores para una estética amigable */
+/* Variables globales */
 :root {
-    --primary-color: #FF6F61; /* Color cálido (para destacar botones y elementos importantes) */
-    --secondary-color: #4A4A4A; /* Gris oscuro (para textos secundarios) */
-    --background-color: #F9F9F9; /* Fondo suave y limpio */
-    --text-color: #000000; /* Texto principal más oscuro para mejor legibilidad */
-    --btn-color: #28A745; /* Verde optimista */
-    --btn-text-color: #fff; /* Blanco para texto en botones */
-    --highlight-color: #FFD700; /* Dorado para destacar elementos importantes */
-    --border-radius: 12px; /* Bordes más suaves */
-    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra más marcada */
-    --hero-bg-color: #f6f6f6; /* Fondo suave */
-    --card-bg-color: #ffffff; /* Fondo blanco para las tarjetas */
-    --section-bg: #F3F3F3; /* Fondo intermedio para cada sección */
+    --primary-color: #FF6F61; /* Color cálido */
+    --secondary-color: #4A4A4A; /* Gris oscuro */
+    --background-color: #F9F9F9; /* Fondo suave */
+    --text-color: #000000; /* Texto principal */
+    --btn-color: #28A745; /* Verde */
+    --btn-hover-color: #218838;
+    --btn-text-color: #fff; /* Blanco */
+    --highlight-color: #FFD700; /* Dorado */
+    --border-radius: 12px; /* Bordes suaves */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --font-family: 'Poppins', sans-serif;
 }
 
-/* Estilo global del body */
-body {
+/* Reset básico */
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif; /* Tipografía moderna y clara */
-    line-height: 1.7;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
     color: var(--text-color);
-    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Sección principal */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 5%;
-    background-color: var(--background-color);
-}
-
-/* Contenedor de las secciones con transiciones suaves */
-section {
-    margin-bottom: 40px;
-    padding: 40px;
-    background-color: var(--section-bg); /* Fondo intermedio para cada sección */
-    border-radius: var(--border-radius);
+/* Estilo general de botones */
+.cta-btn {
+    display: inline-block;
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    padding: 14px 28px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
     box-shadow: var(--shadow-light);
-    transition: all 0.3s ease-in-out;
-    max-width: 1200px; /* Limita el ancho de cada sección */
-    margin-left: auto;
-    margin-right: auto;
 }
 
-section:hover {
-    transform: translateY(-8px);
+.cta-btn:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.1);
     box-shadow: var(--shadow-medium);
 }
 
-/* Estilo para los títulos de las secciones */
-h2, h3 {
-    color: var(--primary-color);
-    text-align: center;
-    font-size: 2.8rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    background: linear-gradient(90deg, #FF6F61 50%, #FFF 50%);
+    color: white;
+    box-shadow: var(--shadow-medium);
+    border-radius: var(--border-radius);
+    width: 100%;
+    margin-bottom: 40px;
 }
 
-/* Subtítulos de la sección */
-h3 {
-    font-size: 2.2rem;
-    color: var(--secondary-color);
+.hero-content {
+    max-width: 50%;
+    text-align: left;
 }
 
-/* Textos en párrafos con márgenes generosos */
-p {
-    text-align: justify;
-    font-size: 1.3rem;
+.hero h1 {
+    font-size: 3rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
     line-height: 1.8;
-    color: var(--secondary-color);
 }
 
-/* Listas con íconos atractivos */
+.hero-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Secciones generales */
+section {
+    margin: 0;
+    padding: 40px 0;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    width: 100%;
+    text-align: center;
+}
+
+/* Sección con colores de fondo */
+section.banner {
+    background-color: var(--highlight-color);
+}
+
+section.nuestra-mision,
+section.impacto,
+section.testimonios,
+section.galeria,
+section.mapa-refugios,
+section.faq,
+section.mensaje-final,
+section.contacto {
+    background-color: var(--background-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Listas */
 ul {
     list-style: none;
     padding-left: 0;
+    margin-top: 20px;
 }
 
 ul li {
-    margin-bottom: 18px;
-    padding-left: 28px;
+    margin-bottom: 15px;
     position: relative;
-    font-size: 1.3rem;
+    padding-left: 30px;
+    font-size: 1.2rem;
 }
 
 ul li::before {
     content: "🐾";
-    color: var(--highlight-color);
-    font-size: 1.6rem;
     position: absolute;
     left: 0;
-    top: 0;
-}
-
-/* Estilo de las citas (blockquote) para testimonios o mensajes */
-blockquote {
-    font-style: italic;
-    background: var(--hero-bg-color);
-    padding: 30px;
-    border-left: 6px solid var(--primary-color);
-    margin: 20px 0;
-    color: var(--secondary-color);
-    font-size: 1.5rem;
-    line-height: 1.8;
-    border-radius: 8px;
-    font-weight: normal; /* Asegura que el texto no esté demasiado delgado */
-}
-
-/* Resaltar texto dentro de las citas (blockquotes) */
-.highlighted {
-    background-color: #87CEEB; /* Azul claro para resaltar */
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* Estilo de los botones */
-.cta-btn {
-    display: inline-block;
-    padding: 15px 40px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: var(--btn-text-color);
-    background: var(--btn-color);
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 20px;
-}
-
-.cta-btn:hover {
-    background: #218838;
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Sección de testimonios con un fondo claro */
-.testimonios {
-    background: var(--card-bg-color);
-    padding: 30px;
-    box-shadow: var(--shadow-medium);
-    border-radius: var(--border-radius);
-    text-align: center;
-}
-
-/* Estilo de las citas en testimonios */
-.testimonios blockquote {
-    background: var(--card-bg-color);
-    border-left: 6px solid var(--highlight-color);
-    font-size: 1.5rem;
     color: var(--primary-color);
-    margin: 0;
+    font-size: 1.4rem;
 }
 
-/* Sección de contacto con un fondo cálido */
+/* Galería de imágenes */
+.galeria-imagenes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.galeria-imagenes img {
+    width: calc(33% - 20px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeria-imagenes img:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Mapa interactivo */
+.mapa-refugios #map {
+    width: 100%;
+    height: 350px;
+    background: #e0e0e0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s;
+}
+
+.mapa-refugios #map:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+/* FAQ */
+.faq .acordeon h3 {
+    cursor: pointer;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.faq .acordeon h3:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.05);
+}
+
+.faq .acordeon p {
+    display: none;
+    padding: 15px;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    transition: all 0.3s;
+}
+
+.faq .acordeon h3:hover + p {
+    display: block;
+}
+
+/* Contacto */
 .contacto {
-    background: #e2f8e3;
-    padding: 40px;
     text-align: center;
+    background: #e2f8e3;
+    padding: 50px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-medium);
-    margin-top: 40px;
+    transition: transform 0.3s;
+}
+
+.contacto:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-light);
 }
