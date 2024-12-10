@@ -31,6 +31,54 @@ body {
     flex-direction: column;
 }
 
+/* Sección de texto sobre la página */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #ffcc99, #66b3b3);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    width: auto;
+}
+
+/* Botón de llamada a la acción */
+.cta-button {
+    margin-top: 20px;
+}
+
+.cta-btn {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    color: white;
+    background-color: #ff7f50;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    background-color: #ff5722;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-medium);
+}
+
 /* Estilo general de botones */
 .cta-btn {
     display: inline-block;
@@ -83,6 +131,9 @@ body {
     font-size: 1.4rem;
     margin-bottom: 30px;
     line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-image img {
@@ -102,7 +153,6 @@ section {
     text-align: center;
 }
 
-/* Sección con colores de fondo */
 section.banner {
     background-color: var(--highlight-color);
 }
@@ -212,7 +262,7 @@ ul li::before {
     transition: all 0.3s;
 }
 
-.faq .acordeon h3:hover + p {
+.faq .acordeon h3:hover+p {
     display: block;
 }
 
@@ -230,3 +280,89 @@ ul li::before {
     transform: translateY(-5px);
     box-shadow: var(--shadow-light);
 }
+
+/* Sección Impacto */
+.impacto {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+}
+
+.impacto h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.stat {
+    background-color: #ffffff;  /* Fondo blanco por defecto */
+    padding: 35px 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: 220px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat h3 {
+    font-size: 3.5rem;
+    color: #000;  /* Letras en color negro */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 1.3rem;
+    color: #000;  /* Texto en color negro */
+    margin-top: 10px;
+}
+
+.stat:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Colores de fondo al pasar el mouse */
+.stat:nth-child(1):hover {
+    background-color: #ffcc00; /* Amarillo */
+}
+
+.stat:nth-child(2):hover {
+    background-color: #00bcd4; /* Azul claro */
+}
+
+.stat:nth-child(3):hover {
+    background-color: #8bc34a; /* Verde */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
