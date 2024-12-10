@@ -16,13 +16,13 @@
 /* -------- Nav Bar -------- */
 
 .mi-logo{
-  height: 75px;
-  width: 150px;
+  height: 90px;
+  width: 180px;
 }
 
 .nav-item{
   font-family: var(--fuente1);
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: bold;
 }
 
@@ -40,3 +40,9 @@
   background-color: #1a8510;
   
 }
+/* .container_btn {
+  position: relative;
+  right: 10%;
+} */
+
+  
