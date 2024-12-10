@@ -1,47 +1,36 @@
 <app-nav-bar></app-nav-bar>
 
-<!-- Banner principal -->
-<section class="banner" aria-label="Banner principal">
-    <div class="banner-content">
-        <h1>Furry Tails</h1>
-        <p>"Cada adopción no solo transforma una vida, sino que une corazones para siempre."</p>
-        <button class="cta-btn">Conoce más</button>
+<section class="about-section">
+    <div class="about-text">
+        <h2>Bienvenido a Futty Tails</h2>
+        <p>En Futty Tails nos dedicamos a ofrecer a cada mascota una segunda oportunidad. Nuestra misión es ayudar a
+            perros y gatos a encontrar el hogar que merecen, lleno de amor, cuidados y compromiso. Ya sea que busques un
+            compañero leal o quieras hacer una diferencia en la vida de un animal, aquí podrás encontrar a tu nuevo
+            amigo.</p>
+        <p>Explora nuestra página, conoce a nuestras adorables mascotas disponibles y da el primer paso hacia una nueva
+            vida juntos.</p>
+    </div>
+    <div class="cta-button">
+        <a href="#adopt" class="cta-btn">¡Adopta a tu compañero hoy!</a>
     </div>
 </section>
 
-<!-- Hero con imagen destacada y llamada a la acción -->
-<section class="hero" aria-label="Hero de adopción">
-    <div class="hero-content">
-        <h1>¡Transforma una vida hoy! 🐾</h1>
-        <p>Explora nuestro refugio y encuentra a tu nuevo amigo peludo. Cada adopción cambia vidas, ¡incluida la tuya!</p>
-        <button class="cta-btn">Comienza ahora</button>
-    </div>
-    <div class="hero-image">
-        <img src="hero-image.jpg" alt="Mascotas felices esperando ser adoptadas">
-    </div>
-</section>
-
-<!-- Carrusel de imágenes destacadas -->
-<section aria-label="Carrusel de imágenes destacadas">
-    <app-carousel></app-carousel>
-</section>
+<app-cards2></app-cards2>
 
 <main>
-
-    <!-- Nuestra Misión -->
-    <section class="nuestra-mision" aria-labelledby="nuestra-mision-title">
-        <h2 id="nuestra-mision-title">🐶 Nuestra misión 🐱</h2>
-        <p>Nuestra misión es clara y poderosa: transformar vidas. Trabajamos en estrecha colaboración con refugios y hogares de acogida para garantizar que cada animal reciba el cuidado y la atención que merece antes de unirse a una familia amorosa.</p>
-
-        <h3>Lo que ofrecemos:</h3>
-        <ul>
-            <li><strong>Adopciones responsables:</strong> Creamos conexiones únicas entre mascotas y adoptantes, asegurando que ambos formen un vínculo perfecto.</li>
-            <li><strong>Apoyo personalizado:</strong> Te acompañamos en cada paso del proceso para facilitar la adaptación de tu nuevo amigo peludo.</li>
-            <li><strong>Historias inspiradoras:</strong> Conoce relatos conmovedores de adopciones exitosas que llenan de esperanza y alegría.</li>
-        </ul>
+    <section class="hero" aria-label="Hero de adopción">
+        <div class="hero-content">
+            <h1>¡Transforma una vida hoy! 🐾</h1>
+            <p>Explora nuestro refugio y encuentra a tu nuevo amigo peludo. Cada adopción cambia vidas, ¡incluida la tuya!
+            </p>
+            <button class="cta-btn">Comienza ahora</button>
+        </div>
+        <div class="hero-image">
+            <img src="hero-image.jpg" alt="Mascotas felices esperando ser adoptadas">
+        </div>
     </section>
 
-    <!-- Impacto en cifras -->
+    <!-- Nuestro impacto -->
     <section class="impacto" aria-labelledby="impacto-title">
         <h2 id="impacto-title">📊 Nuestro impacto</h2>
         <div class="stats">
@@ -59,17 +48,17 @@
             </div>
         </div>
     </section>
+    
 
-    <!-- Testimonios -->
     <section class="testimonios" aria-labelledby="testimonios-title">
         <h2 id="testimonios-title">🌟 Historias de Adopción 🌟</h2>
         <blockquote>
-            "Adoptamos a Max hace un año y ha sido una de las mejores decisiones de nuestra vida. Es un perro lleno de amor y energía, ¡no podemos imaginarnos sin él!" – Familia Rodríguez.
+            "Adoptamos a Max hace un año y ha sido una de las mejores decisiones de nuestra vida. Es un perro lleno de
+            amor y energía, ¡no podemos imaginarnos sin él!" – Familia Rodríguez.
         </blockquote>
         <button class="cta-btn">¡Lee más historias!</button>
     </section>
 
-    <!-- Galería de mascotas -->
     <section class="galeria" aria-labelledby="galeria-title">
         <h2 id="galeria-title">🐾 Conoce a nuestras mascotas 🐾</h2>
         <div class="galeria-imagenes">
@@ -80,37 +69,28 @@
         <button class="cta-btn">Ver más mascotas</button>
     </section>
 
-    <!-- Mapa interactivo -->
     <section class="mapa-refugios" aria-labelledby="mapa-title">
         <h2 id="mapa-title">📍 Encuentra un refugio cerca de ti</h2>
-        <div id="map"></div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" aria-labelledby="faq-title">
-        <h2 id="faq-title">❓ Preguntas Frecuentes</h2>
-        <div class="acordeon">
-            <h3>¿Cómo puedo adoptar una mascota?</h3>
-            <p>Explora nuestro catálogo, completa el formulario de adopción, y nuestro equipo se encargará de guiarte en el proceso.</p>
-            <h3>¿Qué requisitos necesito cumplir?</h3>
-            <p>Ser mayor de edad, llenar un formulario y demostrar que puedes ofrecer un hogar estable y amoroso.</p>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d63628.40702146718!2d-74.1462482!3d4.6341088!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sco!4v1733793609745!5m2!1ses!2sco" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
-
-    <!-- Mensaje final -->
+    
     <section class="mensaje-final">
         <blockquote>
-            "Adoptar un amigo peludo es un acto de amor, compasión y generosidad. ¡Únete a nuestra causa y da una segunda oportunidad a un ser maravilloso!".
+            "Adoptar un amigo peludo es un acto de amor, compasión y generosidad. ¡Únete a nuestra causa y da una
+            segunda oportunidad a un ser maravilloso!".
         </blockquote>
         <button class="cta-btn">Haz tu aporte</button>
     </section>
 
-    <!-- Contacto -->
     <section class="contacto">
-        <p>Si tienes preguntas, dudas o simplemente quieres conocer más sobre nuestras mascotas, ¡estamos aquí para ayudarte! No dudes en ponerte en contacto con nosotros.</p>
+        <p>Si tienes preguntas, dudas o simplemente quieres conocer más sobre nuestras mascotas, ¡estamos aquí para
+            ayudarte! No dudes en ponerte en contacto con nosotros.</p>
         <button class="cta-btn">Contáctanos</button>
     </section>
 
+    <app-cards></app-cards>
 </main>
 
 <app-footer></app-footer>
