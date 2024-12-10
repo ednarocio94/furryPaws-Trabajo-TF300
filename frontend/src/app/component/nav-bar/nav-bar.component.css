@@ -1,0 +1,48 @@
+/* Estilo del Navbar / */
+
+:root {
+  /* tipografía */
+  --fuente1: "Figtree", serif;
+  --fuente2: "IBM Plex Mono", monospace;
+  /* colores */
+  --color-primary: #000000;
+  --color-secundary: #ffffff;
+  --color-1: #1a8510;
+  --color-2: #012A4A;
+  --color-3: #A3CEF1;
+  --color-4: #FFD235;
+}
+
+/* -------- Nav Bar -------- */
+
+.mi-logo{
+  height: 90px;
+  width: 180px;
+}
+
+.nav-item{
+  font-family: var(--fuente1);
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.navbar-nav{
+  gap: 10vw;
+  
+}
+
+.estilo-nav:hover {
+  color:#A3CEF1;
+
+}
+
+.botoncito {
+  background-color: #1a8510;
+  
+}
+/* .container_btn {
+  position: relative;
+  right: 10%;
+} */
+
+  

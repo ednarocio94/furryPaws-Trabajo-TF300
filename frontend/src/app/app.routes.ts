@@ -25,16 +25,14 @@ export const routes: Routes = [
     {path:'admin', component:AdminComponent, title:'Admin', children: [
         {path:'usuarios', component: UsuariosComponent, title:'Usuarios'},
         {path:'mascotas', component: MascotasComponent, title:'Mascotas'},
-        {path:'panel-control', component:PanelControlComponent, title:'Panel de Control'}
+        {path:'', component:PanelControlComponent, }
     ]},
 //--------------------------------------------------------------------------------------------------------//
     {path:'', component:InicioComponent, title:'Furry Paws | Inicio'},
     {path:'paws', component:PawsComponent, title:'Paws'},
-    {path:'contactanos', component:ContactanosComponent, title:'Contáctanos'},
     {path:'sobre-nosotros', component:SobreNosotrosComponent, title:'Sobre Nosotros'},
 //--------------------------------------------------------------------------------------------------------//
-    {path:'adopcion', component:AdopcionComponent, title:'Proceso Adopción'},
-//--------------------------------------------------------------------------------------------------------//
+    {path:'adopcion', component:AdopcionComponent, title:'Proceso Adopción'}, // si tenemos tiempo
     {path:'login', component:LoginComponent, title:'Furry Paws | Inicio de Sesión'},
     {path:'registro', component:RegistroComponent, title:'Furry Paws | Registro'},
 //--------------------------------------------------------------------------------------------------------//
