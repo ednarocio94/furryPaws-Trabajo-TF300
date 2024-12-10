@@ -1,6 +1,27 @@
 <app-nav-bar></app-nav-bar>
 
-<!-- Sección del Carrusel -->
+<!-- Banner principal -->
+<section class="banner" aria-label="Banner principal">
+    <div class="banner-content">
+        <h1>Furry Tails</h1>
+        <p>"Cada adopción no solo transforma una vida, sino que une corazones para siempre."</p>
+        <button class="cta-btn">Conoce más</button>
+    </div>
+</section>
+
+<!-- Hero con imagen destacada y llamada a la acción -->
+<section class="hero" aria-label="Hero de adopción">
+    <div class="hero-content">
+        <h1>¡Transforma una vida hoy! 🐾</h1>
+        <p>Explora nuestro refugio y encuentra a tu nuevo amigo peludo. Cada adopción cambia vidas, ¡incluida la tuya!</p>
+        <button class="cta-btn">Comienza ahora</button>
+    </div>
+    <div class="hero-image">
+        <img src="hero-image.jpg" alt="Mascotas felices esperando ser adoptadas">
+    </div>
+</section>
+
+<!-- Carrusel de imágenes destacadas -->
 <section aria-label="Carrusel de imágenes destacadas">
     <app-carousel></app-carousel>
 </section>
@@ -18,15 +39,25 @@
             <li><strong>Apoyo personalizado:</strong> Te acompañamos en cada paso del proceso para facilitar la adaptación de tu nuevo amigo peludo.</li>
             <li><strong>Historias inspiradoras:</strong> Conoce relatos conmovedores de adopciones exitosas que llenan de esperanza y alegría.</li>
         </ul>
+    </section>
 
-        <h2>📖 ¿Cómo funciona?</h2>
-        <ul>
-            <li><strong>Explora nuestro catálogo:</strong> Descubre a las mascotas disponibles y conoce sus encantadoras historias.</li>
-            <li><strong>Elige a tu compañero ideal:</strong> Aprende sobre sus personalidades, necesidades y encuentra el match perfecto.</li>
-            <li><strong>Adopta con confianza:</strong> Completa el formulario y nuestro equipo te contactará para guiarte en el proceso.</li>
-        </ul>
-
-        <button class="cta-btn">¡Adopta ahora!</button>
+    <!-- Impacto en cifras -->
+    <section class="impacto" aria-labelledby="impacto-title">
+        <h2 id="impacto-title">📊 Nuestro impacto</h2>
+        <div class="stats">
+            <div class="stat">
+                <h3>+500</h3>
+                <p>Adopciones exitosas</p>
+            </div>
+            <div class="stat">
+                <h3>+200</h3>
+                <p>Animales rescatados este año</p>
+            </div>
+            <div class="stat">
+                <h3>50</h3>
+                <p>Refugios aliados</p>
+            </div>
+        </div>
     </section>
 
     <!-- Testimonios -->
@@ -36,6 +67,34 @@
             "Adoptamos a Max hace un año y ha sido una de las mejores decisiones de nuestra vida. Es un perro lleno de amor y energía, ¡no podemos imaginarnos sin él!" – Familia Rodríguez.
         </blockquote>
         <button class="cta-btn">¡Lee más historias!</button>
+    </section>
+
+    <!-- Galería de mascotas -->
+    <section class="galeria" aria-labelledby="galeria-title">
+        <h2 id="galeria-title">🐾 Conoce a nuestras mascotas 🐾</h2>
+        <div class="galeria-imagenes">
+            <img src="mascota1.jpg" alt="Perro feliz esperando adopción">
+            <img src="mascota2.jpg" alt="Gato curioso mirando a la cámara">
+            <img src="mascota3.jpg" alt="Perro jugando en el jardín">
+        </div>
+        <button class="cta-btn">Ver más mascotas</button>
+    </section>
+
+    <!-- Mapa interactivo -->
+    <section class="mapa-refugios" aria-labelledby="mapa-title">
+        <h2 id="mapa-title">📍 Encuentra un refugio cerca de ti</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">❓ Preguntas Frecuentes</h2>
+        <div class="acordeon">
+            <h3>¿Cómo puedo adoptar una mascota?</h3>
+            <p>Explora nuestro catálogo, completa el formulario de adopción, y nuestro equipo se encargará de guiarte en el proceso.</p>
+            <h3>¿Qué requisitos necesito cumplir?</h3>
+            <p>Ser mayor de edad, llenar un formulario y demostrar que puedes ofrecer un hogar estable y amoroso.</p>
+        </div>
     </section>
 
     <!-- Mensaje final -->
@@ -52,7 +111,6 @@
         <button class="cta-btn">Contáctanos</button>
     </section>
 
-    <app-cards></app-cards>
 </main>
 
 <app-footer></app-footer>
