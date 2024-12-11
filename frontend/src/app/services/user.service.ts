@@ -18,14 +18,24 @@ export class UsuariosService {
   // 3. HACER LAS PETICIONES ---------------------------------------------
 
   // Petición POST
-    postUsuarios(user: User){
-      // para crear un usuario, necesito la ruta y el body
-      return this._httpClient.post(this.URL_USUARIOS + '/crear', user );
-    }
+  postUsuarios(user: User) {
+    // para crear un usuario, necesito la ruta y el body
+    return this._httpClient.post(this.URL_USUARIOS + '/crear', user);
+  }
 
   // Petición GET
-    getUsuarios(){
-      return this._httpClient.get(this.URL_USUARIOS + 'obtener');
-    }
-    
+  getUsuarios() {
+    return this._httpClient.get(this.URL_USUARIOS + '/obtener');
+  }
+
+  // Petición PUT 
+  putUsuarios(usuarioActualizado: User, id: string) {
+    return this._httpClient.put(this.URL_USUARIOS + '/actualizar/' + id, usuarioActualizado);
+  }
+
+  // Petición DELETE 
+  deleteUsuarios(id: string) {
+    return this._httpClient.delete(this.URL_USUARIOS + '/eliminar/' + id);
+  }
+
 }

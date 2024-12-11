@@ -15,21 +15,25 @@ export class MascotasService {
 
   // Petición POST para crear una mascota
   postMascota(mascota: Mascotas) {
-    return this._httpClient.post(this.URL_MASCOTAS + '/crear', mascota);
+    return this._httpClient.post(this.URL_MASCOTAS + '/', mascota);
   }
 
   // Petición GET para obtener todas las mascotas
   getMascotas() {
-    return this._httpClient.get(this.URL_MASCOTAS + '/obtener');
+    return this._httpClient.get(this.URL_MASCOTAS + '/');
+  }
+
+  getMascota(id: string) {
+    return this._httpClient.get(this.URL_MASCOTAS + '/' + id);
   }
 
   // Petición PUT para actualizar información de una mascota
   putMascota(mascotaActualizada: Mascotas, id: string) {
-    return this._httpClient.put(this.URL_MASCOTAS + '/actualizar/' + id, mascotaActualizada);
+    return this._httpClient.put(this.URL_MASCOTAS + '/' + id, mascotaActualizada);
   }
 
   // Petición DELETE para eliminar una mascota
   deleteMascota(id: string) {
-    return this._httpClient.delete(this.URL_MASCOTAS + '/eliminar/' + id);
+    return this._httpClient.delete(this.URL_MASCOTAS + '/' + id);
   }
 }

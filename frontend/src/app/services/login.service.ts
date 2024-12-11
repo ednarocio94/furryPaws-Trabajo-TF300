@@ -9,7 +9,9 @@ import { ToastrService } from 'ngx-toastr';
 // importar la dependencia que nos permite decodificar el token
 import { jwtDecode } from "jwt-decode";
 // importar la interfaz para poder iniciar sesión
-import { Credenciales } from '../interfaces/credenciales';
+import { CredencialesAdmin } from '../interfaces/credenciales-admin';
+import { CredencialesUser } from '../interfaces/credenciales-user';
+
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +26,16 @@ export class LoginService {
   public _toastrService = inject(ToastrService);
 
   // 2. RUTA DE CONEXIÓN CON EL BACKEND ----------------------------------
-  private URL_LOGIN = 'http://localhost:3000/iniciarSesion';
+  private URL_LOGIN_ADMIN = 'http://localhost:3000/loginAdmin';
+  private URL_LOGIN_USER = "http://localhost:3000/loginUser";
 
   // 3. INICIAR SESIÓN (petición POST) -----------------------------------
-  inicioSesion(credencialesIngreso: Credenciales) {
-    return this._httpClient.post(this.URL_LOGIN, credencialesIngreso);
+  inicioSesionAdmin(credencialesIngreso: CredencialesAdmin) {
+    return this._httpClient.post(this.URL_LOGIN_ADMIN, credencialesIngreso);
+  }
+
+  inicioSesionUser(credencialesIngreso: CredencialesUser) {
+    return this._httpClient.post(this.URL_LOGIN_USER, credencialesIngreso);
   }
 
   // 4. OBTENER EL TOKEN -------------------------------------------------
@@ -40,8 +47,8 @@ export class LoginService {
   esAdmin() {
     const token = this.obtenerToken();
     if (token) {
-      const decodificado: any = jwtDecode(token);
-      return decodificado.isAdmin ? true : false;
+      const decoded: any = jwtDecode(token);
+      return decoded.isAdmin ? true : false;
 
     } else {
       console.error('No se encontró token')

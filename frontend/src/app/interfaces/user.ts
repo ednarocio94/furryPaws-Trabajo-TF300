@@ -4,7 +4,12 @@ export interface User {
     email: string;
     password: string;
     role?: string;
-    phone: number;
-    isAdult?: boolean;
+    phone: string;
+    isAdult: boolean;
     address: string;
+    preferences: {
+        type: string;
+        size: string;
+        age: string;
+    }
 }
