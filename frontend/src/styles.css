@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    overflow-x: hidden;
+}
+
+/*Estilo general del scroll */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* / Track del scroll / */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* / Barra de desplazamiento / */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+/* / Barra al pasar el mouse / */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
