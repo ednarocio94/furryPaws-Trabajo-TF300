@@ -12,11 +12,11 @@ const userSchema = new mongoose.Schema({
   isAdult: { type: Boolean, required: true },
   address: { type: String, required: true },
   preferences: {
-   type: { type: String, required: true }, // Por ejemplo, "perro"
+    type: { type: String, required: true }, // Por ejemplo, "perro"
     size: { type: String, required: true }, // Por ejemplo, "grande"
     age: { type: String, required: true }, // Por ejemplo, "adulto"
-  }
-})
+  },
+});
 
 //3. definir nuestro modelo
 
