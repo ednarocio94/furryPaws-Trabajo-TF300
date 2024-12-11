@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-registro',
-  imports: [],
   templateUrl: './registro.component.html',
-  styleUrl: './registro.component.css'
+  styleUrls: ['./registro.component.css'],
 })
 export class RegistroComponent {
-
+  onSubmit() {
+    alert('Formulario enviado');
+  }
 }
