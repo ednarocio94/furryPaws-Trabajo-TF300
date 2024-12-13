@@ -8,7 +8,6 @@ import { PanelControlComponent } from './paginas/panel-control/panel-control.com
 
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { PawsComponent } from './paginas/paws/paws.component';
-import { ContactanosComponent } from './paginas/contactanos/contactanos.component';
 import { SobreNosotrosComponent } from './paginas/sobre-nosotros/sobre-nosotros.component';
 
 import { AdopcionComponent } from './paginas/adopcion/adopcion.component';

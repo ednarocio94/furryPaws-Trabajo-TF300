@@ -1,0 +1,368 @@
+/* Variables globales */
+:root {
+    --primary-color: #FF6F61; /* Color cálido */
+    --secondary-color: #4A4A4A; /* Gris oscuro */
+    --background-color: #F9F9F9; /* Fondo suave */
+    --text-color: #000000; /* Texto principal */
+    --btn-color: #28A745; /* Verde */
+    --btn-hover-color: #218838;
+    --btn-text-color: #fff; /* Blanco */
+    --highlight-color: #FFD700; /* Dorado */
+    --border-radius: 12px; /* Bordes suaves */
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.2);
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sección de texto sobre la página */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #ffcc99, #66b3b3);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    width: auto;
+}
+
+/* Botón de llamada a la acción */
+.cta-button {
+    margin-top: 20px;
+}
+
+.cta-btn {
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    color: white;
+    background-color: #ff7f50;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    background-color: #ff5722;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Estilo general de botones */
+.cta-btn {
+    display: inline-block;
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    padding: 14px 28px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: var(--shadow-light);
+}
+
+.cta-btn:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    background: linear-gradient(90deg, #FF6F61 50%, #FFF 50%);
+    color: white;
+    box-shadow: var(--shadow-medium);
+    border-radius: var(--border-radius);
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    max-width: 50%;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Secciones generales */
+section {
+    margin: 0;
+    padding: 40px 0;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    width: 100%;
+    text-align: center;
+}
+
+section.banner {
+    background-color: var(--highlight-color);
+}
+
+section.nuestra-mision,
+section.impacto,
+section.testimonios,
+section.galeria,
+section.mapa-refugios,
+section.faq,
+section.mensaje-final,
+section.contacto {
+    background-color: var(--background-color);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Listas */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+ul li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.2rem;
+}
+
+ul li::before {
+    content: "🐾";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+/* Galería de imágenes */
+.galeria-imagenes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.galeria-imagenes img {
+    width: calc(33% - 20px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeria-imagenes img:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Mapa interactivo */
+.mapa-refugios #map {
+    width: 100%;
+    height: 350px;
+    background: #e0e0e0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s;
+}
+
+.mapa-refugios #map:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+/* FAQ */
+.faq .acordeon h3 {
+    cursor: pointer;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.faq .acordeon h3:hover {
+    background-color: var(--btn-hover-color);
+    transform: scale(1.05);
+}
+
+.faq .acordeon p {
+    display: none;
+    padding: 15px;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    transition: all 0.3s;
+}
+
+.faq .acordeon h3:hover+p {
+    display: block;
+}
+
+/* Contacto */
+.contacto {
+    text-align: center;
+    background: #e2f8e3;
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s;
+}
+
+.contacto:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-light);
+}
+
+/* Sección Impacto */
+.impacto {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    text-align: center;
+}
+
+.impacto h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.stat {
+    background-color: #ffffff;  /* Fondo blanco por defecto */
+    padding: 35px 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: 220px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat h3 {
+    font-size: 3.5rem;
+    color: #000;  /* Letras en color negro */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 1.3rem;
+    color: #000;  /* Texto en color negro */
+    margin-top: 10px;
+}
+
+.stat:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Colores de fondo al pasar el mouse */
+.stat:nth-child(1):hover {
+    background-color: #ffcc00; /* Amarillo */
+}
+
+.stat:nth-child(2):hover {
+    background-color: #00bcd4; /* Azul claro */
+}
+
+.stat:nth-child(3):hover {
+    background-color: #8bc34a; /* Verde */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+

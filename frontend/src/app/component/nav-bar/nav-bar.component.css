@@ -1,5 +1,3 @@
-/* Estilo del Navbar / */
-
 :root {
   /* tipografía */
   --fuente1: "Figtree", serif;
@@ -7,7 +5,7 @@
   /* colores */
   --color-primary: #000000;
   --color-secundary: #ffffff;
-  --color-1: #1a8510;
+  --color-1: #ffffff;
   --color-2: #012A4A;
   --color-3: #A3CEF1;
   --color-4: #FFD235;
@@ -15,34 +13,69 @@
 
 /* -------- Nav Bar -------- */
 
-.mi-logo{
-  height: 90px;
-  width: 180px;
+.contenedor-navBar {
+  justify-content: space-around; /* Espaciado entre los elementos */
+  padding-left: 15px;  /* Padding solo a la izquierda */
+  padding-right: 15px; /* Padding solo a la derecha */
 }
 
-.nav-item{
+.mi-logo {
+  height: auto;
+  width: auto; /* Mantiene la proporción del logo */
+}
+
+.navbar-nav {
+  width: auto;
+  display: flex;
+  justify-content: space-between; /* Espaciado entre los elementos */
+  gap: 9vw; /* Espaciado entre los elementos */
+}
+
+.nav-item {
   font-family: var(--fuente1);
-  font-size: xx-large;
+  font-size: 23px; /* Tamaño de fuente */
   font-weight: bold;
+  padding-left: 15px;  /* Padding solo a la izquierda */
+  padding-right: 15px; /* Padding solo a la derecha */
 }
 
-.navbar-nav{
-  gap: 10vw;
-  
+.estilo-nav {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: color 0.3s ease; /* Transición en hover */
 }
 
 .estilo-nav:hover {
-  color:#A3CEF1;
-
+  color: var(--color-3); /* Cambio de color al pasar el cursor */
+  text-decoration: underline; /* Añadí subrayado al hacer hover */
 }
 
-.botoncito {
-  background-color: #1a8510;
-  
+.boton-Login {
+  background-color: green;
+  border-radius: 30px; /* Hace el botón redondeado */
+  border: solid 5px;
+  padding: 12px 30px; /* Ajuste de tamaño */
+  font-size: 23px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.336); /* Sombra suave */
+  font-weight: bold;
 }
-/* .container_btn {
-  position: relative;
-  right: 10%;
-} */
 
-  
+.boton-Login:hover {
+  background-color: var(--color-4); /* Cambio de color en hover */
+  transform: scale(1.1); /* Efecto de ampliación */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar-nav {
+    gap: 5vw; /* Ajusta el espaciado para pantallas pequeñas */
+  }
+
+  /* Ajustes en el botón de Login en pantallas pequeñas */
+  .boton-Login {
+    padding: 10px 20px; /* Ajuste del padding */
+    font-size: 1rem; /* Ajuste del tamaño del texto */
+  }
+}
