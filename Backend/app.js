@@ -13,13 +13,13 @@ const app = express();
 dotenv.config();
 connectionMongo();
 
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 3000;
 
 
 // Middleware
 app.use(express.json());
 app.use("/usuarios",routerUser)// llamar las rutas 
-app.use("/",routerAdmin)
+app.use("/admin",routerAdmin)
 app.use("/mascotas", petsrouter);
 app.use("/loginAdmin", loginAdminRouter);
 app.use("/loginUser", loginUserRouter);
