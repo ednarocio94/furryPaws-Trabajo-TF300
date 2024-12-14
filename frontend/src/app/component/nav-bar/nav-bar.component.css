@@ -14,9 +14,12 @@
 /* -------- Nav Bar -------- */
 
 .contenedor-navBar {
-  justify-content: space-around; /* Espaciado entre los elementos */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-left: 15px;  /* Padding solo a la izquierda */
-  padding-right: 15px; /* Padding solo a la derecha */
+  padding-right: 6%; /* Padding solo a la derecha */
+  width: auto;
 }
 
 .mi-logo {
@@ -25,15 +28,14 @@
 }
 
 .navbar-nav {
-  width: auto;
   display: flex;
   justify-content: space-between; /* Espaciado entre los elementos */
-  gap: 9vw; /* Espaciado entre los elementos */
+  gap: 8vw; /* Espaciado entre los elementos */
 }
 
 .nav-item {
   font-family: var(--fuente1);
-  font-size: 23px; /* Tamaño de fuente */
+  font-size: 29px; /* Tamaño de fuente */
   font-weight: bold;
   padding-left: 15px;  /* Padding solo a la izquierda */
   padding-right: 15px; /* Padding solo a la derecha */
@@ -42,12 +44,23 @@
 .estilo-nav {
   text-decoration: none;
   color: var(--color-primary);
-  transition: color 0.3s ease; /* Transición en hover */
+  position: relative;
+  transition: color 0.2s ease;
 }
 
 .estilo-nav:hover {
-  color: var(--color-3); /* Cambio de color al pasar el cursor */
-  text-decoration: underline; /* Añadí subrayado al hacer hover */
+  color: #A3CEF1; /* Cambio de color al pasar el cursor */
+}
+
+.estilo-nav:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7px; /* Grosor del subrayado */
+  background-color: #1a5276; /* Color del subrayado */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
 .boton-Login {
@@ -62,20 +75,88 @@
 }
 
 .boton-Login:hover {
-  background-color: var(--color-4); /* Cambio de color en hover */
+  background-color: white; /* Cambio de color en hover */
+  color: #000000;
   transform: scale(1.1); /* Efecto de ampliación */
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada en hover */
 }
 
 /* Responsividad */
-@media (max-width: 768px) {
+
+/* Pantallas grandes */
+@media (max-width: 1000px) {
   .navbar-nav {
-    gap: 5vw; /* Ajusta el espaciado para pantallas pequeñas */
+    gap: 5vw; /* Ajusta el espaciado para pantallas medianas */
+    width: 100%;
+  }
+
+  .mi-logo {
+    width: 120px; /* Ajusta el tamaño del logo para pantallas más pequeñas */
   }
 
   /* Ajustes en el botón de Login en pantallas pequeñas */
   .boton-Login {
     padding: 10px 20px; /* Ajuste del padding */
     font-size: 1rem; /* Ajuste del tamaño del texto */
+  }
+}
+
+/* Pantallas muy pequeñas (menú hamburguesa) */
+@media (max-width: 768px) {
+  .contenedor-navBar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Los elementos del menú se alinean verticalmente */
+    gap: 2rem; /* Reduce el espacio entre los elementos */
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .mi-logo {
+    width: 100px; /* Ajuste de tamaño del logo */
+  }
+
+  .nav-item {
+    font-size: 20px; /* Reducir tamaño de fuente para pantallas pequeñas */
+  }
+
+  .boton-Login {
+    width: 100%; /* Hacer el botón de login más grande */
+    font-size: 1rem; /* Ajuste del tamaño del texto */
+    padding: 12px 20px; /* Ajuste del padding */
+  }
+}
+
+/* Menú hamburguesa (en pantallas pequeñas) */
+@media (max-width: 768px) {
+  .contenedor-navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar-toggler {
+    display: block; /* Muestra el botón de hamburguesa */
+  }
+
+  .navbar-nav {
+    display: none; /* Oculta el menú de navegación por defecto */
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .navbar-collapse.show .navbar-nav {
+    display: flex; /* Muestra el menú cuando se activa el toggle */
+  }
+
+  .boton-Login {
+    width: 100%;
+    margin-top: 20px; /* Asegura que el botón de login esté en la parte inferior del menú */
   }
 }
