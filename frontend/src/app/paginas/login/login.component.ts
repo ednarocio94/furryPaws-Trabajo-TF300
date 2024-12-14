@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
+
 
 // Aqui debemos 
 import {ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
 //import { FormsModule } from '@angular/forms'; Se usa en plantillas pero no te permiten conectar la base de datos 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, FormsModule],
+  imports: [ReactiveFormsModule, FormsModule, RouterModule ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -40,9 +43,6 @@ password: string = '';
   togglePassword() {
     this.showPassword = !this.showPassword;
   }
-
-
-
 }
 
 
