@@ -26,3 +26,24 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #006eff;
 }
+
+@media (max-width: 768px) {
+    .mi-logo {
+      max-width: 80px;
+      height: auto;
+    }
+
+    .vh-100 {
+      height: auto !important;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .card {
+      border-radius: 0.5rem !important;
+    }
+
+    .form-control-lg {
+      font-size: 1rem;
+    }
+  }

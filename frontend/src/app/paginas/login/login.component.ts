@@ -6,10 +6,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Aqui debemos 
 import {ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
+import { FooterComponent } from "../../component/footer/footer.component";
 //import { FormsModule } from '@angular/forms'; Se usa en plantillas pero no te permiten conectar la base de datos 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, FormsModule, RouterModule ],
+  imports: [ReactiveFormsModule, FormsModule, RouterModule, FooterComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
