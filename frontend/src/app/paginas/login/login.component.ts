@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-
-
-
 // Aqui debemos 
 import {ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
-import { FooterComponent } from "../../component/footer/footer.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 //import { FormsModule } from '@angular/forms'; Se usa en plantillas pero no te permiten conectar la base de datos 
 @Component({
   selector: 'app-login',
@@ -27,7 +24,7 @@ password: new FormControl(""),
 });
 
 // esta funcion nos permite controla lo que pasa con nuestro formulario al usar el boton submit 
-handdleloginUser(){
+loginUser(){
   // se muestra en consola  la info que estamos recibiendo 
   console.log ( "esta es la info que recibimos del imput del email"+
     // llamamos al grupo del formulario 
@@ -39,7 +36,7 @@ handdleloginUser(){
 }
 
 
-handdleLoginAdmin(){
+loginAdmin(){
   // se muestra en consola  l
   console.log ( "esta es la info que recibimos del imput del email"+
     // llamamos al grupo del formulario 

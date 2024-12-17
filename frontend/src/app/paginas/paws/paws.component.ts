@@ -1,61 +1,69 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from "../../component/nav-bar/nav-bar.component";
-import { FooterComponent } from "../../component/footer/footer.component";
+import { Button, Modal } from 'bootstrap';
+import { NavBarComponent } from "../../components/nav-bar/nav-bar.component";
+import { FooterComponent } from "../../components/footer/footer.component";
+import { CommonModule } from '@angular/common';
+import { PetCardComponent } from "../../components/pet-card/pet-card.component";
+
 
 @Component({
-  selector: 'app-paws',
-  imports: [NavBarComponent, FooterComponent],
+  selector: 'app-image-gallery',
   templateUrl: './paws.component.html',
-  styleUrl: './paws.component.css'
+  styleUrls: ['./paws.component.css'],
+  imports: [NavBarComponent, FooterComponent, CommonModule]
 })
 export class PawsComponent {
-
+  // Array de imágenes con título y contenido
   images = [
     {
-      src: 'assets/image1.jpg',
-      alt: 'Image 1',
-      description: 'This is the description for image 1'
+      src: 'assets/pawsAssets/contenedorLucas.png',
+      title: 'Imagen 1',
+      content: 'Esta es la descripción de la imagen 1',
+      button:'Adoptame'
     },
     {
-      src: 'assets/image2.jpg',
-      alt: 'Image 2',
-      description: 'This is the description for image 2'
+      src: 'assets/pawsAssets/contenedorLuna.png',
+      title: 'Imagen 2',
+      content: 'Esta es la descripción de la imagen 2',
     },
     {
-      src: 'assets/image3.jpg',
-      alt: 'Image 3',
-      description: 'This is the description for image 3'
+      src: 'assets/pawsAssets/contenedorTequila.png',
+      title: 'Imagen 3',
+      content: 'Esta es la descripción de la imagen 3',
     },
     {
-      src: 'assets/image4.jpg',
-      alt: 'Image 4',
-      description: 'This is the description for image 4'
+      src: 'assets/pawsAssets/contenedorWiskey.png',
+      title: 'Imagen 4',
+      content: 'Esta es la descripción de la imagen 4',
     },
     {
-      src: 'assets/image5.jpg',
-      alt: 'Image 5',
-      description: 'This is the description for image 5'
+      src: 'assets/pawsAssets/Ginebra.png',
+      title: 'Imagen 5',
+      content: 'Esta es la descripción de la imagen 5',
     },
     {
-      src: 'assets/image6.jpg',
-      alt: 'Image 6',
-      description: 'This is the description for image 6'
-    }
+      src: 'assets/pawsAssets/contenedorLucas.png',
+      title: 'Imagen 6',
+      content: 'Esta es la descripción de la imagen 6',
+    },
   ];
 
-  selectedImage: { src: string; alt: string; description: string } | null = null;
+  // Datos del modal
+  modalData = {
+    title: '',
+    content: '',
+  };
 
-  openModal(image: { src: string; alt: string; description: string }): void {
-    this.selectedImage = image;
+  // Abre el modal y asigna los datos
+  openModal(image: any) {
+    this.modalData.title = image.title;
+    this.modalData.content = image.content;
+
+    // Referencia al modal de Bootstrap
     const modalElement = document.getElementById('imageModal');
     if (modalElement) {
-      // const modal = new bootstrap.Modal(modalElement);
-      // modal.show();
+      const modal = new Modal(modalElement);
+      modal.show();
     }
-  }
-
-  handleAction(action: string): void {
-    console.log(`You clicked ${action}`);
-    alert(`You clicked ${action}`);
   }
 }

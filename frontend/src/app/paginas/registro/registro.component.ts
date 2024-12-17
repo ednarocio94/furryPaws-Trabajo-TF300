@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from '../../component/nav-bar/nav-bar.component';
-import { FooterComponent } from '../../component/footer/footer.component';
+import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-registro',
