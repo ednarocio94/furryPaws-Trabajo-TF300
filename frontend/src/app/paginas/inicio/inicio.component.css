@@ -98,95 +98,66 @@ main {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para la imagen */
 }
 
-/*------------------ Sección "Hero de Adopción" ------------------*/
-.hero {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 40px 0;
-    background-color: #f1f1f1;
-}
-
-.hero-image {
-    flex: 1;
-    max-width: 50%;
-}
-
-.hero-image .carousel {
-    width: 100%;
-}
-
-.hero-content {
-    flex: 1;
-    text-align: left;
-    padding: 20px;
-    max-width: 600px;
-}
-
-.hero-content h1 {
-    font-size: 2.5rem;
-    font-family: 'Bevan', cursive;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.cta-btn {
-    background-color: #2980b9;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.cta-btn:hover {
-    background-color: #3498db;
-}
-
 /*------------------ Sección "Nuestro Impacto" ------------------*/
 .impacto {
-    background-color: #e9ecef;
+    background-color: #f0f8ff; /* Color suave y profesional */
     padding: 40px 20px;
     text-align: center;
+    width: 100%;
+    height: 50vh;
+    display: flex; /* Para centrar vertical y horizontal */
+    flex-direction: column; /* Colocar elementos en columna */
+    justify-content: center; /* Centrado vertical */
+    align-items: center; /* Centrado horizontal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 12px; /* Bordes redondeados */
 }
 
 .impacto h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem; /* Tamaño aumentado */
+    margin-bottom: 6vh;
+    color: #333; /* Color de texto oscuro */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    font-family: 'Bevan', cursive;
 }
 
 .stats {
     display: flex;
     justify-content: center;
+    align-items: center; /* Asegura que las stats estén alineadas verticalmente */
     gap: 40px;
     flex-wrap: wrap;
+    max-width: 1200px; /* Limitar el ancho para evitar que se extienda demasiado */
 }
 
 .stat {
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px 30px; /* Más espacio interno */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+    border-radius: 12px; /* Bordes redondeados */
     text-align: center;
     flex: 1;
-    min-width: 200px;
+    min-width: 220px; /* Ajuste mínimo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de hover */
+}
+
+.stat:hover {
+    transform: translateY(-10px); /* Elevación al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
 }
 
 .stat h3 {
     font-size: 2rem;
     margin-bottom: 10px;
+    color: #0078d7; /* Azul moderno */
 }
 
 .stat p {
     font-size: 1.2rem;
+    color: #555; /* Texto gris suave */
 }
+
 
 /*------------------ Sección "Historias de Adopción" ------------------*/
 .testimonios {
@@ -196,8 +167,9 @@ main {
 }
 
 .testimonios h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    font-family: 'Bevan', cursive;
 }
 
 .testimonios blockquote {

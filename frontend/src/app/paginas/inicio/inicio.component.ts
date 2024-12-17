@@ -5,10 +5,11 @@ import { FooterComponent } from "../../component/footer/footer.component";
 import { Cards2Component } from "../../component/cards2/cards2.component";
 import { Cards3Component } from "../../component/cards3/cards3.component";
 import { BannerComponent } from "../../component/banner/banner.component";
+import { Card4Component } from "../../component/card4/card4.component";
 
 @Component({
   selector: 'app-inicio',
-  imports: [NavBarComponent, CardsComponent, FooterComponent, Cards2Component, Cards3Component, BannerComponent],
+  imports: [NavBarComponent, CardsComponent, FooterComponent, Cards2Component, Cards3Component, BannerComponent, Card4Component],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })
