@@ -6,8 +6,7 @@ import { FooterComponent } from "../../component/footer/footer.component";
   selector: 'app-not-found',
   imports: [NavBarComponent, FooterComponent],
   templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.css'
+  styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent {
-
 }
