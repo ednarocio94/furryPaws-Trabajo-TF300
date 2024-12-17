@@ -19,12 +19,12 @@
   align-items: center;
   padding-left: 15px;  /* Padding solo a la izquierda */
   padding-right: 6%; /* Padding solo a la derecha */
-  width: auto;
+  width: 100%;
+  height: 15vh;
 }
 
 .mi-logo {
-  height: auto;
-  width: auto; /* Mantiene la proporción del logo */
+  width: 80%; /* Mantiene la proporción del logo */
 }
 
 .navbar-nav {

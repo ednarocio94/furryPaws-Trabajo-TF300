@@ -27,13 +27,13 @@ export const routes: Routes = [
         {path:'', component:PanelControlComponent, }
     ]},
 //--------------------------------------------------------------------------------------------------------//
-    {path:'', component:InicioComponent, title:'Furry Paws | Inicio'},
+    {path:'', component:InicioComponent, title:'Furry Tails | Inicio'},
     {path:'paws', component:PawsComponent, title:'Paws'},
     {path:'sobre-nosotros', component:SobreNosotrosComponent, title:'Sobre Nosotros'},
 //--------------------------------------------------------------------------------------------------------//
     {path:'adopcion', component:AdopcionComponent, title:'Proceso Adopción'}, // si tenemos tiempo
-    {path:'login', component:LoginComponent, title:'Furry Paws | Inicio de Sesión'},
-    {path:'registro', component:RegistroComponent, title:'Furry Paws | Registro'},
+    {path:'login', component:LoginComponent, title:'Furry Tails | Inicio de Sesión'},
+    {path:'registro', component:RegistroComponent, title:'Furry Tails | Registro'},
 //--------------------------------------------------------------------------------------------------------//
-    {path:'**', component:NotFoundComponent, title:'Error 404'}
+    {path:'notFound', component:NotFoundComponent, title:'Error 404'}
 ];
