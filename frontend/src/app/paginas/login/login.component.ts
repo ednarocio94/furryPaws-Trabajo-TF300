@@ -27,7 +27,7 @@ password: new FormControl(""),
 });
 
 // esta funcion nos permite controla lo que pasa con nuestro formulario al usar el boton submit 
-handlesubmit(){
+handdleloginUser(){
   // se muestra en consola  la info que estamos recibiendo 
   console.log ( "esta es la info que recibimos del imput del email"+
     // llamamos al grupo del formulario 
@@ -38,6 +38,17 @@ handlesubmit(){
   );
 }
 
+
+handdleLoginAdmin(){
+  // se muestra en consola  l
+  console.log ( "esta es la info que recibimos del imput del email"+
+    // llamamos al grupo del formulario 
+    this.formularioLogin.value.email
+  );
+  console.log ( "esta es la info que recibimos del imput del password"+
+    this.formularioLogin.value.password
+  );
+}
 password: string = '';
   showPassword: boolean = false;
 
