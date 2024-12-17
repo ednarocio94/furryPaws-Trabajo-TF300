@@ -1,51 +1,82 @@
 /*------------------ Sección "Hero de Adopción" ------------------*/
 .hero {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;  /* Centra los elementos horizontalmente */
+    align-items: center;      /* Centra verticalmente los elementos */
     gap: 20px;
-    padding: 40px 0;
-    background-color: #f1f1f1;
-}
-
-.hero-image {
-    flex: 1;
-    max-width: 50%;
-}
-
-.hero-image .carousel {
+    padding: 0;               /* Elimina el padding de arriba y abajo */
+    background-color: #ffffff;
+    height: 70vh;             /* La sección ocupa el 70% de la altura de la pantalla */
     width: 100%;
 }
 
 .hero-content {
-    flex: 1;
     text-align: left;
-    padding: 20px;
-    max-width: 600px;
+    width: 50%;               /* El ancho es el 50% del contenedor */
+    max-width: 450px;         /* Establece el ancho máximo del contenido */
+    display: flex;
+    flex-direction: column;   /* Organiza los elementos del texto en una columna */
+    justify-content: center;  /* Centra el texto verticalmente */
+    height: 100%;             /* Ocupa toda la altura disponible */
+    margin: 0 auto;           /* Centra el contenido de manera horizontal */
+}
+
+.hero-image {
+    width: 60vw;               /* El ancho es el 50% del contenedor */
+    height: 100%;             /* La altura es el 100% del contenedor */
+    overflow: hidden;         /* Asegura que no se salga contenido */
+    position: relative;       /* Para que los controles del carrusel estén dentro del contenedor */
+    display: flex;
+    justify-content: center;  /* Centra las imágenes dentro del carrusel */
+    align-items: center;      /* Alinea las imágenes verticalmente */
+}
+
+.hero-image .carousel {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;             /* Hace que las imágenes llenen el contenedor sin distorsionarse */
+    object-fit: cover;        /* Asegura que las imágenes cubran el área sin deformarse */
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
-    font-family: 'Bevan', cursive;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    font-family: 'Bevan', sans-serif;
+    margin-bottom: 50px;
 }
 
 .hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 5vh;
 }
 
 .cta-btn {
-    background-color: #2980b9;
+    width: auto;              /* Ajusta el ancho al texto */
+    height: auto;
+    background-color: #155783;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: none;
+    font-weight: bold;
+    padding: 15px 30px;       /* Relleno más grande para un aspecto más moderno */
+    font-size: 1.2rem;        /* Aumento del tamaño del texto */
+    border-radius: 25px;      /* Bordes muy redondeados para un estilo más suave */
+    border: 5px solid #ffffff; /* Borde azul claro */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.594);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto suave al pasar el ratón */
+    text-align: center;       /* Centra el texto dentro del botón */
+    margin: 20px auto;        /* Centra el botón horizontalmente */
+    display: block;           /* Hace que el botón sea un bloque para aplicar el centramiento */
 }
 
 .cta-btn:hover {
     background-color: #3498db;
+    transform: translateY(-3px);  /* Efecto de desplazamiento al pasar el ratón */
+}
+
+.cta-btn:active {
+    transform: translateY(0);  /* Vuelve a la posición original cuando se hace clic */
 }

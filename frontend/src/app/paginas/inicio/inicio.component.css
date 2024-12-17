@@ -159,29 +159,6 @@ main {
 }
 
 
-/*------------------ Sección "Historias de Adopción" ------------------*/
-.testimonios {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.testimonios h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: 'Bevan', cursive;
-}
-
-.testimonios blockquote {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.testimonios .cta-btn {
-    margin-top: 20px;
-}
-
 /*------------------ Sección "Conoce a Nuestras Mascotas" ------------------*/
 .galeria {
     background-color: #f1f1f1;
@@ -213,33 +190,181 @@ main {
 
 /*------------------ Sección "Mapa de Refugios" ------------------*/
 .mapa-refugios {
-    background-color: #fff;
-    padding: 40px 20px;
+    background-color: #9acfd1b2;
+    padding: 60px 20px;
     text-align: center;
+    color: #ffffff;
+    border-radius: 55px 55px 0 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
 }
 
+/* Título de la sección */
+.mapa-refugios h2 {
+    font-size: 2.5rem;
+    font-family: 'Bevan', sans-serif;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+/* Contenedor del mapa */
+.mapa-refugios .map-container {
+    width: 70vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center; /* Centra el mapa en el contenedor */
+    align-items: center; /* Centra el mapa en el contenedor */
+}
+
+/* Estilo del iframe (el mapa de Google) */
 .mapa-refugios iframe {
     width: 100%;
-    height: 500px;
-    border: none;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .mapa-refugios {
+        padding: 40px 10px;
+    }
+
+    .mapa-refugios h2 {
+        font-size: 2rem;
+    }
+
+    .mapa-refugios iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mapa-refugios h2 {
+        font-size: 1.8rem;
+    }
+
+    .mapa-refugios iframe {
+        height: 300px;
+    }
 }
 
 /*------------------ Sección "Mensaje Final" ------------------*/
 .mensaje-final {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    color: #000000; /* Texto blanco para resaltar sobre el fondo oscuro */
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto; /* Ajuste automático de la altura */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrado vertical y horizontal */
+    flex-direction: column; /* Coloca los elementos en columna */
 }
 
+/* Tipografía Figtree */
 .mensaje-final blockquote {
-    font-size: 1.2rem;
-    font-style: italic;
-    margin-bottom: 20px;
+    font-size: 1.6rem;
+    font-family: 'Figtree', sans-serif; /* Fuente Figtree */
+    padding: 40px;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 30px;
+    max-width: 80%; /* Aumenta el ancho máximo para mejor ajuste */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    color: #000000; /* Texto blanco */
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima de otros elementos */
 }
 
+/* Botón de llamada a la acción */
 .mensaje-final .cta-btn {
-    margin-top: 20px;
+    background: linear-gradient(135deg, #28a745, #21840d); /* Fondo con gradiente suave */
+    font-family: 'Figtree', sans-serif;
+    color: #ffffff;
+    border: 5px solid #ffffff; /* Borde más sutil */
+    padding: 18px 36px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out; /* Transición más suave y larga */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-top: 20px; /* Espacio entre el bloque de texto y el botón */
+    position: relative;
+    z-index: 2;
+    overflow: hidden; /* Para ocultar cualquier parte del borde en la animación */
 }
+
+/* Efecto Hover */
+.mensaje-final .cta-btn:hover {
+    background: linear-gradient(135deg, #147825, #1b6c2f); /* Color más oscuro al pasar el mouse */
+    transform: translateY(-7px); /* Efecto de elevación más fuerte */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Sombra más intensa al hacer hover */
+}
+
+/* Animación adicional para un efecto de "glow" */
+.mensaje-final .cta-btn::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, #28a745, #21840d);
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.mensaje-final .cta-btn:hover::before {
+    opacity: 1; /* Hace que el borde "brille" cuando el botón se activa */
+    transform: scale(1.1); /* Escala el borde para crear el efecto de resplandor */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .mensaje-final blockquote {
+        font-size: 1.4rem;
+        max-width: 90%; /* Ajuste para pantallas más pequeñas */
+    }
+
+    .mensaje-final .cta-btn {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsividad para dispositivos más pequeños */
+@media (max-width: 480px) {
+    .mensaje-final blockquote {
+        font-size: 1.2rem;
+        max-width: 90%; /* Ajuste para pantallas más pequeñas */
+    }
+
+    .mensaje-final .cta-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+
 
 /*------------------ Sección "Contacto" ------------------*/
 .contacto {

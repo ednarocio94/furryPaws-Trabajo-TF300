@@ -1,5 +1,11 @@
+.containerCards{
+    padding: 50px;
+    background-color: #4984c391;
+}
+
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 50px; /* Padding dentro de la tarjeta para darle más espacio */
 }
 
 .card:hover {
@@ -9,28 +15,32 @@
 
 .card-body {
     background-color: #fff;
-    padding: 30px;
+    padding: 30px; /* Padding dentro de la tarjeta */
+    border-radius: 15px; /* Bordes redondeados */
 }
 
 .card-title {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-family: 'Bevan', cursive;
+    font-size: 3rem;
     color: #333;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .card-text {
     font-size: 1.2rem;
-    color: #666;
+    color: #000000;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .btn {
     font-size: 1.2rem;
+    color: #ffffff;
     font-weight: bold;
     padding: 12px 30px;
     border-radius: 50px;
+    border: solid 5px white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -39,39 +49,35 @@
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border: none;
+    background-color: #1a5fa8e2;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #014792;
 }
 
 .btn-success {
-    background-color: #28a745;
-    border: none;
+    background-color: #269941;
 }
 
 .btn-success:hover {
-    background-color: #218838;
+    background-color: #085819;
 }
 
 .btn-warning {
     background-color: #ffc107;
-    border: none;
 }
 
 .btn-warning:hover {
-    background-color: #e0a800;
+    background-color: #b48700;
 }
 
 .btn-danger {
     background-color: #dc3545;
-    border: none;
 }
 
 .btn-danger:hover {
-    background-color: #c82333;
+    background-color: #a21523;
 }
 
 .rounded-pill {
