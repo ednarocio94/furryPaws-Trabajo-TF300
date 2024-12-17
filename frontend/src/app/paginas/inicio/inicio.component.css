@@ -1,5 +1,286 @@
-main{
-    padding-left: 5%;
-    padding-right: 5%;
-    border: solid 2px black;
+/* Estilo general para el contenedor principal */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/*------------------ Sección "Sobre Nosotros" ------------------*/
+.sobreNosotros {
+    width: 100%; /* Hace que el contenedor ocupe todo el ancho de la pantalla */
+    background-color: #f9f9f9; /* Fondo suave */
+    display: flex;
+    justify-content: center; /* Centra el contenido */
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+}
+
+.sobreNosotros .contenido {
+    display: flex;
+    flex-wrap: wrap; /* Permite que el contenido se adapte */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Hace que el contenido ocupe todo el ancho disponible */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */ 
+}
+
+.texto {
+    flex: 1;
+    max-width: 600px; /* Ancho máximo de 600px */
+    margin: 5vw;
+    text-align: center; /* Centra el texto */
+    color: #000; /* Texto negro */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.texto h1 {
+    font-family: 'Bevan', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000; /* Título en negro */
+}
+
+.texto p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #000; /* Texto en negro */
+}
+
+.texto ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.texto ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #000; /* Texto en negro */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Suaviza el desplazamiento de todo el li */
+}
+
+/* Hover para los elementos de la lista */
+.texto ul li:hover {
+    transform: translateY(-6px); /* Desplazamiento hacia arriba del li completo */
+}
+
+/* Hover para los enlaces dentro de la lista */
+.texto ul li a {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #000; /* Texto de los enlaces en negro */
+    text-decoration: none;
+    display: inline-block; /* Necesario para animar */
+    transition: color 0.3s ease, transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), text-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Hover para los enlaces dentro de la lista */
+.texto ul li a:hover {
+    color: transparent; /* Hacemos que el color del texto sea transparente */
+    background: linear-gradient(135deg, #2980b9, #8e44ad); /* Gradiente de azul a morado */
+    -webkit-background-clip: text; /* Para que el gradiente se aplique solo al texto */
+    background-clip: text; /* Para que el gradiente se aplique solo al texto */
+    transform: translateY(-6px) scale(1.1); /* Desplazamiento hacia arriba y agrandamiento */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.193); /* Sombra sutil en el texto */
+}
+
+
+
+/* Estilo para las imágenes en la sección "Sobre Nosotros" */
+.sobreNosotros .imagen {
+    flex: 1;
+    width: 100%; /* Se asegura de que la imagen ocupe todo el ancho disponible */
+}
+
+.sobreNosotros .imagen img {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para la imagen */
+}
+
+/*------------------ Sección "Hero de Adopción" ------------------*/
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 0;
+    background-color: #f1f1f1;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-image .carousel {
+    width: 100%;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-family: 'Bevan', cursive;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cta-btn {
+    background-color: #2980b9;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #3498db;
+}
+
+/*------------------ Sección "Nuestro Impacto" ------------------*/
+.impacto {
+    background-color: #e9ecef;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.impacto h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 1.2rem;
+}
+
+/*------------------ Sección "Historias de Adopción" ------------------*/
+.testimonios {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonios h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.testimonios blockquote {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonios .cta-btn {
+    margin-top: 20px;
+}
+
+/*------------------ Sección "Conoce a Nuestras Mascotas" ------------------*/
+.galeria {
+    background-color: #f1f1f1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.galeria-imagenes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.galeria-imagenes img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.galeria .cta-btn {
+    margin-top: 20px;
+}
+
+/*------------------ Sección "Mapa de Refugios" ------------------*/
+.mapa-refugios {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.mapa-refugios iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+/*------------------ Sección "Mensaje Final" ------------------*/
+.mensaje-final {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.mensaje-final blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.mensaje-final .cta-btn {
+    margin-top: 20px;
+}
+
+/*------------------ Sección "Contacto" ------------------*/
+.contacto {
+    background-color: #e9ecef;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contacto p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.contacto .cta-btn {
+    margin-top: 20px;
 }
