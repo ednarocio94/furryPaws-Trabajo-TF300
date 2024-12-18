@@ -13,18 +13,22 @@ import { ContactanosComponent } from './paginas/contactanos/contactanos.componen
 import { AdopcionComponent } from './paginas/adopcion/adopcion.component';
 
 import { LoginComponent } from './paginas/login/login.component';
+import { LoginAdminComponent } from './paginas/login-admin/login-admin.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
+import { RegistroAdminComponent } from './paginas/registro-admin/registro-admin.component';
+
+import { authGuard } from './guards/auth.guard';
 
 import { NotFoundComponent } from './paginas/not-found/not-found.component';
 
 
-// RUTAS PARA CADA PAGINA 
+// RUTAS PARA CADA PAGINA
 export const routes: Routes = [
 //--------------------------------------------------------------------------------------------------------//
-    {path:'admin', component:AdminComponent, title:'Admin', children: [
+    {path:'admin', component:AdminComponent, title:'Admin', canActivate: [authGuard], canActivateChild: [authGuard],children: [
         {path:'usuarios', component: UsuariosComponent, title:'Usuarios'},
         {path:'mascotas', component: MascotasComponent, title:'Mascotas'},
-        {path:'', component:PanelControlComponent, }
+        {path:'', component: PanelControlComponent }
     ]},
 //--------------------------------------------------------------------------------------------------------//
     {path:'', component:InicioComponent, title:'Furry Tails | Inicio'},
@@ -34,7 +38,9 @@ export const routes: Routes = [
 //--------------------------------------------------------------------------------------------------------//
     {path:'adopcion', component:AdopcionComponent, title:'Proceso Adopción'}, // si tenemos tiempo
     {path:'login', component:LoginComponent, title:'Furry Tails | Inicio de Sesión'},
+    {path:'loginAdmin', component:LoginAdminComponent, title:'Furry Tails | Inicio de Sesión Admin'},
     {path:'registro', component:RegistroComponent, title:'Furry Tails | Registro'},
+    {path:'registroAdmin', component:RegistroAdminComponent, title:'Furry Tails | Registro Admin'},
 //--------------------------------------------------------------------------------------------------------//
     {path:'notFound', component:NotFoundComponent, title:'Error 404'}
 ];
