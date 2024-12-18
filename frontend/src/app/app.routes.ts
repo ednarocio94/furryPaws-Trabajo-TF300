@@ -26,7 +26,7 @@ export const routes: Routes = [
     {path:'admin', component:AdminComponent, title:'Admin', children: [
         {path:'usuarios', component: UsuariosComponent, title:'Usuarios'},
         {path:'mascotas', component: MascotasComponent, title:'Mascotas'},
-        {path:'', component:PanelControlComponent, }
+        {path:'', component: PanelControlComponent }
     ]},
 //--------------------------------------------------------------------------------------------------------//
     {path:'', component:InicioComponent, title:'Furry Tails | Inicio'},
