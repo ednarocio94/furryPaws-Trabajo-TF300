@@ -1,0 +1,36 @@
+.registration-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  color: #218838;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: -10px;
+}
+
+@media (max-width: 576px) {
+  .registration-form {
+    padding: 15px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+  }
+}
