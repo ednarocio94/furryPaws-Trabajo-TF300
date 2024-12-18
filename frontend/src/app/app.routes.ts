@@ -9,7 +9,7 @@ import { PanelControlComponent } from './paginas/panel-control/panel-control.com
 import { InicioComponent } from './paginas/inicio/inicio.component';
 import { PawsComponent } from './paginas/paws/paws.component';
 import { SobreNosotrosComponent } from './paginas/sobre-nosotros/sobre-nosotros.component';
-
+import { ContactanosComponent } from './paginas/contactanos/contactanos.component';
 import { AdopcionComponent } from './paginas/adopcion/adopcion.component';
 
 import { LoginComponent } from './paginas/login/login.component';
@@ -30,6 +30,7 @@ export const routes: Routes = [
     {path:'', component:InicioComponent, title:'Furry Tails | Inicio'},
     {path:'paws', component:PawsComponent, title:'Paws'},
     {path:'sobre-nosotros', component:SobreNosotrosComponent, title:'Sobre Nosotros'},
+    {path:'contactanos', component:ContactanosComponent, title:'Contactanos'},
 //--------------------------------------------------------------------------------------------------------//
     {path:'adopcion', component:AdopcionComponent, title:'Proceso Adopción'}, // si tenemos tiempo
     {path:'login', component:LoginComponent, title:'Furry Tails | Inicio de Sesión'},
