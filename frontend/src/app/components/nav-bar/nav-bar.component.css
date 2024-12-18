@@ -85,6 +85,13 @@
 
 /* Pantallas grandes */
 @media (max-width: 1000px) {
+  .contenedor-navBar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: auto;
+  }
+
   .navbar-nav {
     gap: 5vw; /* Ajusta el espaciado para pantallas medianas */
     width: 100%;
@@ -107,6 +114,7 @@
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    height: auto;
   }
 
   .navbar-nav {
@@ -135,9 +143,10 @@
 /* Menú hamburguesa (en pantallas pequeñas) */
 @media (max-width: 768px) {
   .contenedor-navBar {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    padding: 10px;
+    height: auto;
   }
 
   .navbar-toggler {
