@@ -14,11 +14,10 @@ import { AdopcionComponent } from './paginas/adopcion/adopcion.component';
 
 import { LoginComponent } from './paginas/login/login.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
-
 import { NotFoundComponent } from './paginas/not-found/not-found.component';
 
 
-// RUTAS PARA CADA PAGINA 
+// RUTAS PARA CADA PAGINA
 export const routes: Routes = [
 //--------------------------------------------------------------------------------------------------------//
     {path:'admin', component:AdminComponent, title:'Admin', children: [
