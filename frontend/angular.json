@@ -30,7 +30,9 @@
               "node_modules/bootstrap-icons/font/bootstrap-icons.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
-              "src/app/paginas/login/login.component.css"
+              "src/app/paginas/login/login.component.css",
+              "src/app/paginas/paws/paws.component.css"
+              
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
