@@ -14,7 +14,10 @@ import { AdopcionComponent } from './paginas/adopcion/adopcion.component';
 
 import { LoginComponent } from './paginas/login/login.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
+import { RegistroAdminComponent } from './paginas/registro-admin/registro-admin.component';
+
 import { NotFoundComponent } from './paginas/not-found/not-found.component';
+import { LoginAdminComponent } from './paginas/login-admin/login-admin.component';
 
 
 // RUTAS PARA CADA PAGINA
@@ -33,7 +36,9 @@ export const routes: Routes = [
 //--------------------------------------------------------------------------------------------------------//
     {path:'adopcion', component:AdopcionComponent, title:'Proceso Adopción'}, // si tenemos tiempo
     {path:'login', component:LoginComponent, title:'Furry Tails | Inicio de Sesión'},
+    {path:'loginAdmin', component:LoginAdminComponent, title:'Furry Tails | Inicio de Sesión Admin'},
     {path:'registro', component:RegistroComponent, title:'Furry Tails | Registro'},
+    {path:'registroAdmin', component:RegistroAdminComponent, title:'Furry Tails | Registro Admin'},
 //--------------------------------------------------------------------------------------------------------//
     {path:'notFound', component:NotFoundComponent, title:'Error 404'}
 ];
