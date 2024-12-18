@@ -17,13 +17,15 @@ import { LoginAdminComponent } from './paginas/login-admin/login-admin.component
 import { RegistroComponent } from './paginas/registro/registro.component';
 import { RegistroAdminComponent } from './paginas/registro-admin/registro-admin.component';
 
+import { authGuard } from './guards/auth.guard';
+
 import { NotFoundComponent } from './paginas/not-found/not-found.component';
 
 
 // RUTAS PARA CADA PAGINA
 export const routes: Routes = [
 //--------------------------------------------------------------------------------------------------------//
-    {path:'admin', component:AdminComponent, title:'Admin', children: [
+    {path:'admin', component:AdminComponent, title:'Admin', canActivate: [authGuard], canActivateChild: [authGuard],children: [
         {path:'usuarios', component: UsuariosComponent, title:'Usuarios'},
         {path:'mascotas', component: MascotasComponent, title:'Mascotas'},
         {path:'', component: PanelControlComponent }
