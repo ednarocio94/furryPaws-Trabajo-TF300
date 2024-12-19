@@ -146,6 +146,16 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.831);
 }
 
+.casosexito-title {
+  font-family: var(--fuente1);
+  font-weight: 900;
+  font-size: 60px; /* Smaller font size */
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.831);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 
 .sobreNosotrosTexto{
     width: 40%;
@@ -165,7 +175,7 @@ body {
     margin-top: 2vh;
     height: auto;
     width: auto;
-    font-size: large;
+    font-size: larger;
     font-family: var(--fuente1);
     background-color: #012A4A; /* Color de fondo normal */
     color: white; /* Color del texto */
@@ -325,4 +335,16 @@ body {
     color: #555; /* Color de texto más suave */
     line-height: 1.5;
     padding: 0 10px; /* Espaciado lateral para el texto */
+}
+
+.carousel {
+  margin-top: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.carousel img {
+  object-fit: cover;
+  height: 200px;
 }
