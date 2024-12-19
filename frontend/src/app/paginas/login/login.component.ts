@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { CredencialesUser } from '../../interfaces/credenciales-user';
 import { CredencialesAdmin } from '../../interfaces/credenciales-admin';
-import { ToastrService } from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr'; 
 
 // Aqui debemos 
 import {ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
