@@ -37,7 +37,7 @@ export const routes: Routes = [
     {path:'paws', component:PawsComponent, title:'Paws'},
     {path:'sobre-nosotros', component:SobreNosotrosComponent, title:'Sobre Nosotros'},
     {path:'contactanos', component:ContactanosComponent, title:'Contactanos'},
-    {path:'blog',component:BlogComponent, title:'blog'}
+    {path:'blog',component:BlogComponent, title:'blog'},
 //--------------------------------------------------------------------------------------------------------//
     {path:'adopcion', component:AdopcionComponent, title:'Proceso Adopción'}, // si tenemos tiempo
     {path:'login', component:LoginComponent, title:'Furry Tails | Inicio de Sesión'},
