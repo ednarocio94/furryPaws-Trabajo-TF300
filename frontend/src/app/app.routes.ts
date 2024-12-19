@@ -20,6 +20,7 @@ import { RegistroAdminComponent } from './paginas/registro-admin/registro-admin.
 import { authGuard } from './guards/auth.guard';
 
 import { NotFoundComponent } from './paginas/not-found/not-found.component';
+   
 
 
 // RUTAS PARA CADA PAGINA
