@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([authInterceptor])),
     //Proveedor para mensajes
     provideToastr({
-      timeOut: 2000, //tiempo de duracion en pantalla
+      timeOut: 2000, //tiempo de duracion en pantallaz
       positionClass: 'toast-bottom-left', // definir donde se muestre
       preventDuplicates: true, // evitar duplicados
       easeTime: 0, //Cuanto tiempo pasa antes de que aparesca en pantalla
