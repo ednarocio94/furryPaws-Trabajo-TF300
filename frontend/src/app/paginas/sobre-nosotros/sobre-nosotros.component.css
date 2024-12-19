@@ -26,17 +26,17 @@ body {
 /* ----------------------------------------- HEADER ------------------------------------------------- */
 .header {
     margin: 0;
-    width: 100%; /* Ocupa todo el ancho */
-    height: 100vh; /* Ajuste automático para el contenido */
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column; /* Contenido apilado verticalmente */
+    flex-direction: column;
 }
 
-/* --------- barra nav -------- */
+/* -------- barra nav -------- */
 .container-navBar {
     width: 100%;
-    height: 17%; /* Mantiene la altura */
-    padding: 0 20px; /* Padding lateral */
+    height: 17%;
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -47,75 +47,64 @@ body {
     padding-right: 90px;
 }
 
-/* -------- logo -------- */
-.logo-navBar {
-    margin-right: 20px;
-    width: 10vw; /* Espacio entre el logo y la lista */
-}
-
 .logo-navBar img {
     width: 15vw;
 }
 
-/* -------- Nav Bar -------- */
 .navBar-list {
-    width: 45vw; /* Ancho de la lista */
-    height: 5vh; /* Altura de la lista */
-    display: flex; /* Mantiene la lista en fila */
-    list-style: none; /* Elimina los puntos de la lista */
-    gap: 4vw; /* Espacio entre los elementos de la lista */
-    margin: 0; /* Elimina el margen */
-    padding: 0; /* Elimina el padding */
+    width: 45vw;
+    height: 5vh;
+    display: flex;
+    list-style: none;
+    gap: 4vw;
+    margin: 0;
+    padding: 0;
     font-weight: bold;
-    background-color: rgba(128, 128, 128, 0.315); /* Color de fondo */
-    border-radius: 50px; /* Bordes redondeados */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra */
-    justify-content: center; /* Centra los elementos */
-    align-items: center; /* Alinea verticalmente los elementos */
+    background-color: rgba(128, 128, 128, 0.315);
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
 }
 
-/* Quitar subrayado de los enlaces */
 .navBar-list a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: var(--color-primary); /* Asegúrate de que el color sea visible */
+    text-decoration: none;
+    color: var(--color-primary);
 }
 
-/* -------- button login -------- */
 .button-login {
     width: 7vw;
     height: 5vh;
-    padding: 0; /* Asegúrate de que no haya padding que afecte el centrado */
+    padding: 0;
     background-color: var(--color-1);
     border-radius: 50px;
     font-weight: bold;
     border: solid 4px rgb(255, 255, 255);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    margin-left: 20px; /* Espacio entre el botón de login y la lista */
-    display: flex; /* Usar flexbox para centrar */
-    align-items: center; /* Centra verticalmente el contenido */
-    justify-content: center; /* Centra horizontalmente el contenido */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Quitar subrayado del enlace de login */
 .button-login a {
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    color: var(--color-secundary); /* Asegúrate de que el color sea visible */
-    display: block; /* Ocupa todo el botón */
-    width: 100%; /* Ocupa todo el ancho del botón */
-    line-height: 5vh; /* Asegura que el texto esté centrado verticalmente */
-    text-align: center; /* Centra el texto horizontalmente */
+    text-decoration: none;
+    color: var(--color-secundary);
+    display: block;
+    width: 100%;
+    line-height: 5vh;
+    text-align: center;
 }
 
-/* Estilo al pasar el mouse */
 .button-login:hover {
-    background-color: var(--color-secundary); /* Color al pasar el mouse */
-    color: var(--color-primary); /* Cambia el color del texto */
-    border-color: var(--color-primary); /* Cambia el borde al pasar el mouse */
+    background-color: var(--color-secundary);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .button-login a:hover {
-    color: var(--color-primary); /* Cambia el color del enlace al pasar el mouse */
+    color: var(--color-primary);
 }
 
 /* -------------------------------- BANNER -------------------------------- */
@@ -125,163 +114,111 @@ body {
     background-color: #f5f5f5;
 }
 
-.contenido-banner{
+.contenido-banner {
     width: 100%;
     height: 100%;
     padding: 20px;
     padding-top: 3vh;
-    align-content: center;
-    text-align: center; /* Centra el texto */
+    text-align: center;
     background-color: rgba(205, 218, 220, 0.782);
-    display: flex; /* Utiliza flexbox para centrar el contenido */
-    flex-direction: column; /* Organiza los elementos en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.title-banner{
+.title-banner {
     font-family: var(--fuente1);
     font-weight: 900;
-    font-size: 150px;
+    font-size: 120px;
     color: #ffffff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.831);
 }
 
 .casosexito-title {
-  font-family: var(--fuente1);
-  font-weight: 900;
-  font-size: 60px; /* Smaller font size */
-  color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.831);
-  margin-bottom: 20px;
-  text-align: center;
+    font-family: var(--fuente1);
+    font-weight: 900;
+    font-size: 60px;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.831);
+    margin-bottom: 20px;
+    text-align: center;
 }
 
+.carousel {
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
 
-.sobreNosotrosTexto{
+.carousel img {
+    object-fit: cover;
+    height: 500px;
+}
+
+.carousel-item {
+    transition: transform 0.5s ease-in-out;
+}
+
+.sobreNosotrosTexto {
     width: 40%;
-    height: 20vh;
     margin-top: 2vh;
     padding: 20px;
-    align-content: center;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.79);
-    transition: 20px;
     font-size: 20px;
     font-family: var(--fuente2);
 }
-
-
-.boton-saberMas {
-    margin-top: 2vh;
-    height: auto;
-    width: auto;
-    font-size: larger;
-    font-family: var(--fuente1);
-    background-color: #012A4A; /* Color de fondo normal */
-    color: white; /* Color del texto */
-    border: solid 5px #FFFFFF; /* Borde de 5px en blanco */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 10px; /* Espaciado interno para el botón */
-    text-align: center; /* Centrar el texto */
-    display: inline-block; /* Asegurarse de que el botón se comporte como un bloque */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
-}
-
-.boton-saberMas a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: inherit; /* Hereda el color del botón */
-    display: block; /* Hace que el enlace ocupe todo el botón */
-}
-
-.boton-saberMas:hover {
-    background-color: #fee500bd; /* Cambia el color de fondo al pasar el mouse */
-    color: #fff; /* Mantiene el texto blanco */
-    transform: scale(1.05); /* Aumenta el tamaño del botón al pasar el mouse */
-}
-
 
 /* ---------------- SOBRE NOSOTROS ---------------- */
 #sobreNosotros {
     text-align: center;
     margin: 40px auto;
     max-width: 100%;
-    background-color: rgba(205, 218, 220, 0.9); /* Fondo más transparente */
+    background-color: rgba(205, 218, 220, 0.9);
     padding: 70px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .titulo {
-    font-size: 40px; /* Tamaño del título */
+    font-size: 40px;
     font-family: var(--fuente1);
     font-weight: bolder;
-    color: #012A4A; /* Color del título */
-    margin-bottom: 20px; /* Espacio debajo del título */
+    color: #012A4A;
+    margin-bottom: 20px;
 }
 
 .contenido-flex {
-    display: flex; /* Usar flexbox para alinear la imagen y el texto */
-    justify-content: center; /* Centrar contenido horizontalmente */
-    align-items: center; /* Alinear verticalmente en el centro */
-    margin: 20px 0; /* Espaciado entre el título y el contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
 }
 
 .imagenSobreNosotros {
-    max-width: 40%; /* Ajustar el tamaño de la imagen */
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
-    border-radius: 10px; /* Bordes redondeados para la imagen */
+    max-width: 40%;
+    margin-right: 20px;
+    border-radius: 10px;
 }
 
 .contenido p {
-    border: solid 2px;
-    font-size: 1.2rem; /* Tamaño del texto */
+    font-size: 1.2rem;
     font-family: var(--fuente2);
-    width: 50%; /* Ancho del texto */
-    line-height: 1.5; /* Espacio entre líneas */
-    color: #333; /* Color del texto */
-    margin: 10px 0; /* Espaciado entre párrafos */
+    width: 50%;
+    line-height: 1.5;
+    color: #333;
+    margin: 10px 0;
     padding: 20px;
     border-radius: 20px;
-}
-
-.boton-adoptar {
-    margin-top: 2vh;
-    height: auto;
-    width: auto;
-    font-size: large;
-    font-family: var(--fuente1);
-    background-color: #012A4A; /* Color de fondo normal */
-    color: white; /* Color del texto */
-    border: solid 5px #FFFFFF; /* Borde de 5px en blanco */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 10px; /* Espaciado interno para el botón */
-    text-align: center; /* Centrar el texto */
-    display: inline-block; /* Asegurarse de que el botón se comporte como un bloque */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para color y transformación */
-}
-
-.boton-adoptar a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: inherit; /* Hereda el color del botón */
-    display: block; /* Hace que el enlace ocupe todo el botón */
-}
-
-.boton-adoptar:hover {
-    background-color: #fc51ffa8; /* Cambia el color de fondo al pasar el mouse */
-    color: #fff; /* Mantiene el texto blanco */
-    transform: scale(1.05); /* Aumenta el tamaño del botón al pasar el mouse */
 }
 
 /* ---------------- FUNDADORES ---------------- */
 .founders-section {
     padding: 60px 20px;
-    background-color: #f8f9fa; /* Color de fondo suave */
+    background-color: #f8f9fa;
     text-align: center;
-    border-bottom: 5px solid #012A4A; /* Línea de separación */
-}
-
-.titulo-Fundadores {
-    margin-bottom: 5vh;
+    border-bottom: 5px solid #012A4A;
 }
 
 .founders-container {
@@ -293,58 +230,45 @@ body {
 
 .founder-card {
     width: 300px;
-    background-color: #ffffff; /* Fondo blanco para mayor contraste */
+    background-color: #ffffff;
     border-radius: 15px;
     padding: 20px;
     text-align: center;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Para el efecto de fondo */
-    overflow: hidden; /* Para ocultar el desbordamiento del efecto */
+    overflow: hidden;
 }
 
 .founder-card:hover {
-    transform: translateY(-5px); /* Eleva la tarjeta ligeramente al pasar el mouse */
+    transform: translateY(-5px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .founder-photo {
-    width: 150px;   /* Ancho fijo */
-    height: 150px;  /* Alto fijo */
-    border-radius: 50%; /* Círculo perfecto */
-    object-fit: cover; /* Mantiene el aspecto proporcional */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 15px;
-    border: 5px solid #012A4A; /* Borde para la imagen */
-    transition: transform 0.3s ease; /* Animación para la imagen */
+    border: 5px solid #012A4A;
+    transition: transform 0.3s ease;
 }
 
 .founder-card:hover .founder-photo {
-    transform: scale(1.1); /* Aumenta la imagen al pasar el mouse */
+    transform: scale(1.1);
 }
 
 .founder-card h3 {
     font-family: var(--fuente2);
     font-size: 1.5rem;
-    color: #012A4A; /* Color del texto */
+    color: #012A4A;
     margin-bottom: 10px;
 }
 
 .founder-card p {
     font-family: var(--fuente1);
     font-size: 1rem;
-    color: #555; /* Color de texto más suave */
+    color: #555;
     line-height: 1.5;
-    padding: 0 10px; /* Espaciado lateral para el texto */
-}
-
-.carousel {
-  margin-top: 20px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.carousel img {
-  object-fit: cover;
-  height: 200px;
+    padding: 0 10px;
 }
