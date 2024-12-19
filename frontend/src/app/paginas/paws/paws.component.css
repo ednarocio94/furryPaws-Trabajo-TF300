@@ -24,3 +24,12 @@
     margin: 0 auto;
     margin-top: 5%;
 }
+/* CSS */
+.rounded-corners {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animación suave */
+}
+
+.rounded-corners:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+    filter: brightness(1.2); /* Incrementa el brillo */
+}

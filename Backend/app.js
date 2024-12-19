@@ -7,6 +7,7 @@ import routerAdmin from "./src/routes/admin.routes.js";
 import petsrouter from "./src/routes/mascotas.routes.js";
 import loginAdminRouter from "./src/routes/loginAdmin.routes.js";
 import loginUserRouter from "./src/routes/loginUser.routes.js";
+import cors from "cors";
 
 // 2. CONFIGURAR EL USO DE NUESTRO SERVIDOR
 const app = express();
@@ -14,7 +15,7 @@ dotenv.config();
 connectionMongo();
 
 const port = process.env.PORT || 3000;
-
+app.use(cors())
 
 // Middleware
 app.use(express.json());
