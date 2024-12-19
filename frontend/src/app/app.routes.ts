@@ -11,6 +11,7 @@ import { PawsComponent } from './paginas/paws/paws.component';
 import { SobreNosotrosComponent } from './paginas/sobre-nosotros/sobre-nosotros.component';
 import { ContactanosComponent } from './paginas/contactanos/contactanos.component';
 import { AdopcionComponent } from './paginas/adopcion/adopcion.component';
+import { BlogComponent } from './paginas/blog/blog.component';
 
 import { LoginComponent } from './paginas/login/login.component';
 import { LoginAdminComponent } from './paginas/login-admin/login-admin.component';
@@ -20,6 +21,7 @@ import { RegistroAdminComponent } from './paginas/registro-admin/registro-admin.
 import { authGuard } from './guards/auth.guard';
 
 import { NotFoundComponent } from './paginas/not-found/not-found.component';
+   
 
 
 // RUTAS PARA CADA PAGINA
@@ -35,6 +37,7 @@ export const routes: Routes = [
     {path:'paws', component:PawsComponent, title:'Paws'},
     {path:'sobre-nosotros', component:SobreNosotrosComponent, title:'Sobre Nosotros'},
     {path:'contactanos', component:ContactanosComponent, title:'Contactanos'},
+    {path:'blog',component:BlogComponent, title:'blog'},
 //--------------------------------------------------------------------------------------------------------//
     {path:'adopcion', component:AdopcionComponent, title:'Proceso Adopción'}, // si tenemos tiempo
     {path:'login', component:LoginComponent, title:'Furry Tails | Inicio de Sesión'},
