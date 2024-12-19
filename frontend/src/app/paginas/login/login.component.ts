@@ -15,7 +15,7 @@ export class LoginComponent {
 // los formularios reactivos trabajan de forma dinamica y me permiten acceder a la base de datos
 
 /*
- trabajan con grupo de formularios  y tienen un grupo de controles 
+  trabajan con grupo de formularios  y tienen un grupo de controles 
 */
 
 formularioLogin = new FormGroup({
