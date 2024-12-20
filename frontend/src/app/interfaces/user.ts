@@ -1,15 +1,10 @@
 export interface User {
-    image: string;
+    image?: string;
     fullName: string;
     email: string;
     password: string;
     role?: string;
     phone: string;
-    isAdult: boolean;
+    isAdult: string;
     address: string;
-    preferences: {
-        type: string;
-        size: string;
-        age: string;
-    }
 }

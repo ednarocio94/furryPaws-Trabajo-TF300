@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 // IMPORTAR PAGINAS QUE SE VAN HA UTILIZAR
 import { AdminComponent } from './paginas/admin/admin.component';
 import { UsuariosComponent } from './paginas/admin/usuarios/usuarios.component';
-import { MascotasComponent } from './paginas/admin/mascotas/mascotas.component';
 import { PanelControlComponent } from './paginas/panel-control/panel-control.component';
 
 import { InicioComponent } from './paginas/inicio/inicio.component';
@@ -15,7 +14,7 @@ import { BlogComponent } from './paginas/blog/blog.component';
 
 import { LoginComponent } from './paginas/login/login.component';
 import { LoginAdminComponent } from './paginas/login-admin/login-admin.component';
-import { RegistroComponent } from './paginas/registro/registro.component';
+ import { RegistroComponent } from './paginas/registro/registro.component';
 import { RegistroAdminComponent } from './paginas/registro-admin/registro-admin.component';
 
 import { authGuard } from './guards/auth.guard';
@@ -29,7 +28,6 @@ export const routes: Routes = [
 //--------------------------------------------------------------------------------------------------------//
     {path:'admin', component:AdminComponent, title:'Admin', canActivate: [authGuard], canActivateChild: [authGuard],children: [
         {path:'usuarios', component: UsuariosComponent, title:'Usuarios'},
-        {path:'mascotas', component: MascotasComponent, title:'Mascotas'},
         {path:'', component: PanelControlComponent }
     ]},
 //--------------------------------------------------------------------------------------------------------//
@@ -45,5 +43,5 @@ export const routes: Routes = [
     {path:'registro', component:RegistroComponent, title:'Furry Tails | Registro'},
     {path:'registroAdmin', component:RegistroAdminComponent, title:'Furry Tails | Registro Admin'},
 //--------------------------------------------------------------------------------------------------------//
-    {path:'notFound', component:NotFoundComponent, title:'Error 404'}
+    {path:'**', component:NotFoundComponent, title:'Error 404'}
 ];
