@@ -1,45 +1,52 @@
 /*------------------ Sección "Hero de Adopción" ------------------*/
 .hero {
     display: flex;
-    justify-content: center;  /* Centra los elementos horizontalmente */
-    align-items: center;      /* Centra verticalmente los elementos */
+    justify-content: center;
+    align-items: center;
     gap: 20px;
-    padding: 0;               /* Elimina el padding de arriba y abajo */
+    padding: 0;
     background-color: #ffffff;
-    height: 70vh;             /* La sección ocupa el 70% de la altura de la pantalla */
+    height: auto;
+    /* Altura ajustada automáticamente */
     width: 100%;
+    flex-wrap: wrap;
+    /* Permite cambiar el diseño según el ancho de la pantalla */
 }
 
 .hero-content {
     text-align: left;
-    width: 50%;               /* El ancho es el 50% del contenedor */
-    max-width: 450px;         /* Establece el ancho máximo del contenido */
+    width: 50%;
+    /* Por defecto, ocupa el 50% del contenedor */
+    max-width: 450px;
     display: flex;
-    flex-direction: column;   /* Organiza los elementos del texto en una columna */
-    justify-content: center;  /* Centra el texto verticalmente */
-    height: 100%;             /* Ocupa toda la altura disponible */
-    margin: 0 auto;           /* Centra el contenido de manera horizontal */
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .hero-image {
-    width: 60vw;               /* El ancho es el 50% del contenedor */
-    height: 100%;             /* La altura es el 100% del contenedor */
-    overflow: hidden;         /* Asegura que no se salga contenido */
-    position: relative;       /* Para que los controles del carrusel estén dentro del contenedor */
+    width: 60%;
+    /* Por defecto, ocupa el 60% del contenedor */
+    height: auto;
+    /* Ajusta la altura automáticamente */
+    overflow: hidden;
+    position: relative;
     display: flex;
-    justify-content: center;  /* Centra las imágenes dentro del carrusel */
-    align-items: center;      /* Alinea las imágenes verticalmente */
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-image .carousel {
     width: 100%;
-    height: 100%;
+    height: auto;
+    /* Ajusta la altura automáticamente */
 }
 
 .hero-image img {
     width: 100%;
-    height: 100%;             /* Hace que las imágenes llenen el contenedor sin distorsionarse */
-    object-fit: cover;        /* Asegura que las imágenes cubran el área sin deformarse */
+    height: auto;
+    /* Ajusta la altura automáticamente */
+    object-fit: cover;
 }
 
 .hero-content h1 {
@@ -55,28 +62,315 @@
 }
 
 .cta-btn {
-    width: auto;              /* Ajusta el ancho al texto */
+    width: auto;
     height: auto;
     background-color: #155783;
     color: #fff;
     font-weight: bold;
-    padding: 15px 30px;       /* Relleno más grande para un aspecto más moderno */
-    font-size: 1.2rem;        /* Aumento del tamaño del texto */
-    border-radius: 25px;      /* Bordes muy redondeados para un estilo más suave */
-    border: 5px solid #ffffff; /* Borde azul claro */
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    border: 5px solid #ffffff;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.594);
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto suave al pasar el ratón */
-    text-align: center;       /* Centra el texto dentro del botón */
-    margin: 20px auto;        /* Centra el botón horizontalmente */
-    display: block;           /* Hace que el botón sea un bloque para aplicar el centramiento */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    margin: 20px auto;
+    display: block;
+    margin-bottom: 5vh;
 }
 
 .cta-btn:hover {
     background-color: #3498db;
-    transform: translateY(-3px);  /* Efecto de desplazamiento al pasar el ratón */
+    transform: translateY(-3px);
 }
 
 .cta-btn:active {
-    transform: translateY(0);  /* Vuelve a la posición original cuando se hace clic */
+    transform: translateY(0);
+}
+
+/*------------------ Media Queries ------------------*/
+@media (max-width: 1500px) {
+
+    /*------------------ Sección "Hero de Adopción" ------------------*/
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        background-color: #ffffff;
+        height: auto;
+        /* Altura ajustada automáticamente */
+        width: 100%;
+        flex-wrap: wrap;
+        /* Permite cambiar el diseño según el ancho de la pantalla */
+    }
+
+    .hero-content {
+        text-align: left;
+        width: 50%;
+        /* Por defecto, ocupa el 50% del contenedor */
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        width: 60%;
+        /* Por defecto, ocupa el 60% del contenedor */
+        height: auto;
+        /* Ajusta la altura automáticamente */
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-image .carousel {
+        width: 100%;
+        height: auto;
+        /* Ajusta la altura automáticamente */
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        /* Ajusta la altura automáticamente */
+        object-fit: cover;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+        font-family: 'Bevan', sans-serif;
+        margin-bottom: 50px;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        line-height: 1.9;
+        margin-bottom: 5vh;
+    }
+
+    .cta-btn {
+        width: auto;
+        height: auto;
+        background-color: #155783;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border-radius: 25px;
+        border: 5px solid #ffffff;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.594);
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+        margin: 20px auto;
+        display: block;
+        margin-bottom: 5vh;
+    }
+
+    .cta-btn:hover {
+        background-color: #3498db;
+        transform: translateY(-3px);
+    }
+
+    .cta-btn:active {
+        transform: translateY(0);
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    /*------------------ Sección "Hero de Adopción" ------------------*/
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        background-color: #ffffff;
+        height: auto;
+        /* Altura ajustada automáticamente */
+        width: 100%;
+        flex-wrap: wrap;
+        /* Permite cambiar el diseño según el ancho de la pantalla */
+    }
+
+    .hero-content {
+        text-align: left;
+        width: 50%;
+        /* Por defecto, ocupa el 50% del contenedor */
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        width: 60%;
+        /* Por defecto, ocupa el 60% del contenedor */
+        height: auto;
+        /* Ajusta la altura automáticamente */
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-image .carousel {
+        width: 100%;
+        height: auto;
+        /* Ajusta la altura automáticamente */
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        /* Ajusta la altura automáticamente */
+        object-fit: cover;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+        font-family: 'Bevan', sans-serif;
+        margin-bottom: 50px;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        line-height: 1.9;
+        margin-bottom: 5vh;
+    }
+
+    .cta-btn {
+        width: auto;
+        height: auto;
+        background-color: #155783;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border-radius: 25px;
+        border: 5px solid #ffffff;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.594);
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+        margin: 20px auto;
+        display: block;
+        margin-bottom: 5vh;
+    }
+
+    .cta-btn:hover {
+        background-color: #3498db;
+        transform: translateY(-3px);
+    }
+
+    .cta-btn:active {
+        transform: translateY(0);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    /*------------------ Sección "Hero de Adopción" ------------------*/
+    .hero {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 0;
+        background-color: #ffffff;
+        height: auto;
+        /* Altura ajustada automáticamente */
+        width: 100%;
+        flex-wrap: wrap;
+        /* Permite cambiar el diseño según el ancho de la pantalla */
+    }
+
+    .hero-content {
+        text-align: left;
+        width: 50%;
+        /* Por defecto, ocupa el 50% del contenedor */
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        width: 60%;
+        /* Por defecto, ocupa el 60% del contenedor */
+        height: auto;
+        /* Ajusta la altura automáticamente */
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-image .carousel {
+        width: 100%;
+        height: auto;
+        /* Ajusta la altura automáticamente */
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        /* Ajusta la altura automáticamente */
+        object-fit: cover;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+        font-family: 'Bevan', sans-serif;
+        margin-bottom: 50px;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        line-height: 1.9;
+        margin-bottom: 5vh;
+    }
+
+    .cta-btn {
+        width: auto;
+        height: auto;
+        background-color: #155783;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border-radius: 25px;
+        border: 5px solid #ffffff;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.594);
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
+        margin: 20px auto;
+        display: block;
+        margin-bottom: 5vh;
+    }
+
+    .cta-btn:hover {
+        background-color: #3498db;
+        transform: translateY(-3px);
+    }
+
+    .cta-btn:active {
+        transform: translateY(0);
+    }
+
 }

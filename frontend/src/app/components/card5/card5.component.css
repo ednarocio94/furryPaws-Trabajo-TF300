@@ -1,21 +1,21 @@
-/*------------------ Sección "Testimonios" ------------------*/ 
+/* ------------------ Sección "Testimonios" ------------------ */
 .testimonios {
-    background-color: #f0f8ff; /* Fondo suave que combina bien con el tema general */
+    background-color: #f0f8ff;
     width: 100%;
-    height: 70vh;
+    height: auto;
 }
 
 .testimonios h2 {
     font-size: 3rem;
     font-family: 'Bevan', sans-serif;
-    color: #000000; /* Color de texto negro */
+    color: #000000;
 }
 
 .testimonios .lead {
-    font-weight: 300; /* Tipografía más gruesa */
-    font-family: 'Arial', sans-serif; /* Tipo de letra sans-serif */
-    color: #000000; /* Color de texto negro */
-    font-size: 1.2rem; /* Ajuste del tamaño para mayor legibilidad */
+    font-weight: 300;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+    font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 20px;
 }
@@ -26,25 +26,25 @@
     border-radius: 20px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     border: solid 5px white;
-    background-color: #ff00ee; /* Verde vibrante */
+    background-color: #ff00ee;
     color: #fff;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s, border 0.3s ease-in-out; /* Transición para efectos */
+    transition: background-color 0.3s, transform 0.3s, border 0.3s ease-in-out;
+    margin-bottom: 5vh;
 }
 
-/* Efecto hover para el botón "cta-btn" */
 .testimonios .cta-btn:hover {
-    background-color: #e015d2; /* Cambio de color a verde más oscuro */
+    background-color: #e015d2;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     border: solid 5px white;
-    transform: translateY(-5px); /* Elevar el botón */
+    transform: translateY(-5px);
 }
 
 .card-group {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Permite que las tarjetas se acomoden en múltiples filas si es necesario */
+    flex-wrap: wrap;
 }
 
 .card {
@@ -55,11 +55,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 500px; /* Aumento del ancho de las tarjetas */
-    max-width: 100%; /* Se asegura de que la tarjeta no se desborde */
-    height: auto; /* Deja que la altura sea automática según el contenido */
-    max-height: 600px; /* Límite máximo para la altura */
-    overflow: hidden; /* Asegura que nada se salga fuera de la tarjeta */
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    overflow: hidden;
 }
 
 .card-body {
@@ -67,7 +66,7 @@
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
-    padding: 20px; /* Asegura que el contenido tenga más espacio */
+    padding: 20px;
 }
 
 .card-title {
@@ -78,61 +77,405 @@
 }
 
 .card-text {
-    font-size: 1rem; /* Ajuste del tamaño del texto */
-    color: #000000; /* Color de texto negro */
+    font-size: 1rem;
+    color: #000000;
     flex-grow: 1;
-    margin-bottom: 15px; /* Espacio inferior para separar el texto del botón */
+    margin-bottom: 15px;
 }
 
-/* Efecto hover para las tarjetas */
 .card:hover {
-    transform: translateY(-10px); /* Eleva la tarjeta al pasar el mouse */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra más prominente */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Botones dentro de las tarjetas */
 .card .btn-primary {
-    background-color: #fc00eb; /* Cambio de color a verde más oscuro */
+    background-color: #fc00eb;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     border: solid 5px white;
     border-radius: 20px;
     font-weight: bold;
     transition: background-color 0.3s, border 0.3s ease-in-out;
-    margin-top: auto; /* Empuja el botón hacia abajo */
-    padding: 10px 20px; /* Ajusta el tamaño del botón */
-    text-align: center; /* Centra el texto dentro del botón */
+    margin-top: auto;
+    padding: 10px 20px;
+    text-align: center;
 }
 
-/* Efecto hover para el botón dentro de las tarjetas */
 .card .btn-primary:hover {
-    background-color: #e015d2; /* Cambio de color a verde más oscuro */
+    background-color: #e015d2;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     border: solid 5px white;
     border-radius: 20px;
 }
 
-/* Imagen de las tarjetas */
 .card img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    height: 180px;
-    width: 100%; /* Ajusta la imagen al tamaño de la tarjeta */
+    height: auto;
+    width: 100%;
     object-fit: cover;
 }
 
-@media (max-width: 991px) {
-    .testimonios .col-lg-5,
-    .testimonios .col-lg-7 {
-        text-align: center;
+/* ------------------ Responsividad ------------------ */
+
+/* En pantallas entre 500px y 1000px */
+@media (max-width: 1000px) {
+
+    /* ------------------ Sección "Testimonios" ------------------ */
+    .testimonios {
+        background-color: #f0f8ff;
+        width: 100%;
+        height: auto;
+    }
+
+    .testimonios h2 {
+        font-size: 3rem;
+        font-family: 'Bevan', sans-serif;
+        color: #000000;
+    }
+
+    .testimonios .lead {
+        font-weight: 300;
+        font-family: 'Arial', sans-serif;
+        color: #000000;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .testimonios .cta-btn {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        border-radius: 20px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        background-color: #ff00ee;
+        color: #fff;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.3s, border 0.3s ease-in-out;
+        margin-bottom: 5vh;
+    }
+
+    .testimonios .cta-btn:hover {
+        background-color: #e015d2;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        transform: translateY(-5px);
     }
 
     .card-group {
-        flex-direction: column;
-        align-items: center;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     .card {
-        width: 90%; /* Ajuste del ancho para pantallas más pequeñas */
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ff00d9;
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #000000;
+        flex-grow: 1;
+        margin-bottom: 15px;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card .btn-primary {
+        background-color: #fc00eb;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        border-radius: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s, border 0.3s ease-in-out;
+        margin-top: auto;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .card .btn-primary:hover {
+        background-color: #e015d2;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        border-radius: 20px;
+    }
+
+    .card img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* En pantallas menores a 500px */
+@media (max-width: 500px) {
+
+    /* ------------------ Sección "Testimonios" ------------------ */
+    .testimonios {
+        background-color: #f0f8ff;
+        width: 100%;
+        height: auto;
+    }
+
+    .testimonios h2 {
+        font-size: 3rem;
+        font-family: 'Bevan', sans-serif;
+        color: #000000;
+    }
+
+    .testimonios .lead {
+        font-weight: 300;
+        font-family: 'Arial', sans-serif;
+        color: #000000;
+        font-size: 1.2rem;
+        line-height: 1.8;
         margin-bottom: 20px;
+    }
+
+    .testimonios .cta-btn {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        border-radius: 20px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        background-color: #ff00ee;
+        color: #fff;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.3s, border 0.3s ease-in-out;
+        margin-bottom: 5vh;
+    }
+
+    .testimonios .cta-btn:hover {
+        background-color: #e015d2;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        transform: translateY(-5px);
+    }
+
+    .card-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ff00d9;
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #000000;
+        flex-grow: 1;
+        margin-bottom: 15px;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card .btn-primary {
+        background-color: #fc00eb;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        border-radius: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s, border 0.3s ease-in-out;
+        margin-top: auto;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .card .btn-primary:hover {
+        background-color: #e015d2;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        border-radius: 20px;
+    }
+
+    .card img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+/* En pantallas mayores a 1500px */
+@media (min-width: 1500px) {
+
+    /* ------------------ Sección "Testimonios" ------------------ */
+    .testimonios {
+        background-color: #f0f8ff;
+        width: 100%;
+        height: auto;
+    }
+
+    .testimonios h2 {
+        font-size: 3rem;
+        font-family: 'Bevan', sans-serif;
+        color: #000000;
+    }
+
+    .testimonios .lead {
+        font-weight: 300;
+        font-family: 'Arial', sans-serif;
+        color: #000000;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .testimonios .cta-btn {
+        font-size: 1.2rem;
+        padding: 12px 25px;
+        border-radius: 20px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        background-color: #ff00ee;
+        color: #fff;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.3s, border 0.3s ease-in-out;
+        margin-bottom: 5vh;
+    }
+
+    .testimonios .cta-btn:hover {
+        background-color: #e015d2;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        transform: translateY(-5px);
+    }
+
+    .card-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ff00d9;
+        margin-bottom: 15px;
+    }
+
+    .card-text {
+        font-size: 1rem;
+        color: #000000;
+        flex-grow: 1;
+        margin-bottom: 15px;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .card .btn-primary {
+        background-color: #fc00eb;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        border-radius: 20px;
+        font-weight: bold;
+        transition: background-color 0.3s, border 0.3s ease-in-out;
+        margin-top: auto;
+        padding: 10px 20px;
+        text-align: center;
+    }
+
+    .card .btn-primary:hover {
+        background-color: #e015d2;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        border: solid 5px white;
+        border-radius: 20px;
+    }
+
+    .card img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: auto;
+        width: 100%;
+        object-fit: cover;
     }
 }
