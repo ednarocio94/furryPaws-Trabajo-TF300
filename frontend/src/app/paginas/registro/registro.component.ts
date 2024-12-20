@@ -18,9 +18,7 @@ export class RegistroComponent {
   private _toastrService = inject(ToastrService);
   private _router = inject(Router);
 
-  /*
-    Formulario
-  */
+
   formularioRegistro = new FormGroup({
     fullName: new FormControl(''),
     email: new FormControl(''),
@@ -31,7 +29,7 @@ export class RegistroComponent {
     type: new FormControl(''),
     size: new FormControl(''),
     age: new FormControl(''),
-    image: new FormControl(null), // Imagen opcional
+    image: new FormControl(null),
   });
 
   onSubmit() {
