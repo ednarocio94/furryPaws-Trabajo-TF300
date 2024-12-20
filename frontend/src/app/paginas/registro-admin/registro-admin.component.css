@@ -1,25 +1,64 @@
 .registration-form {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Figtree', sans-serif;
+}
+
+.form-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Bevan', cursive;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #0078d7;
 }
 
 .btn-primary {
-  background-color: rgb(12, 102, 24);
+  background-color: #0c6618;
   color: #ffffff;
-  border: solid 5px white;
+  border: none;
   border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384); /* Sombra sutil */
-  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+  padding: 12px 20px;
   font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #094f13;
 }
 
 .error-message {
@@ -30,7 +69,7 @@
 
 @media (max-width: 576px) {
   .registration-form {
-    padding: 15px;
+    padding: 20px;
   }
 
   .btn-primary {

@@ -3,18 +3,18 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-  image: { type: String, required: true },
+  image: { type: String, required: false },
   fullName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, default: "user" },
   phone: { type: String, required: true },
-  isAdult: { type: Boolean, required: true },
+  isAdult: { type: String, required: true },
   address: { type: String, required: true },
   preferences: {
-    type: { type: String, required: true }, // Por ejemplo, "perro"
-    size: { type: String, required: true }, // Por ejemplo, "grande"
-    age: { type: String, required: true }, // Por ejemplo, "adulto"
+    type: { type: String, required: false }, // Por ejemplo, "perro"
+    size: { type: String, required: false }, // Por ejemplo, "grande"
+    age: { type: String, required: false }, // Por ejemplo, "adulto"
   },
 });
 

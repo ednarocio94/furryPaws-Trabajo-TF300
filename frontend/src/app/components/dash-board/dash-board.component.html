@@ -1,46 +1,49 @@
 <div class="dashboard-container">
   <aside class="sidebar">
     <div class="logo">
-        <img src="assets/logo.png" alt="Logo" class="mi-logo">
+      <img src="assets/logo.png" alt="Logo" class="mi-logo" />
     </div>
-    <h2>Centro de administración</h2>
-    <p>Bienvenido, Admin</p>
-    <nav>
-      <ul>
-        <li>Gestión de mascotas</li>
-        <li>Gestión de administradores</li>
-        <li>Gestión de usuarios</li>
-      </ul>
-    </nav>
-    <button class="logout-btn">Cerrar sesión</button>
+    <div class="menu-sidebar">
+      <h2 class=" menu">Centro de administración</h2>
+      <nav>
+        <ul>
+          <a routerLink="/admin"> 
+            <li>Gestión de mascotas</li>
+          </a>
+         <a routerLink="/admin/usuarios">
+          <li>Gestión de usuarios</li>
+        </a>
+        </ul>
+      </nav>
+      <button (click)="loginout()" class="logout-btn">Cerrar sesión</button>
+    </div>
+
   </aside>
 
   <main class="main-content">
     <div class="header">
-      <h1>Gestión de mascotas</h1>
-      <button class="add-product-btn">Agregar nuevas mascotas</button>
+      <h1 class="titulo"> Nuestras mascotas</h1>
+      <button class="btn btn-primary add-product-btn">Agregar nuevas mascotas</button>
     </div>
+    <section class="row contentPaws">
+      <div class="col-md-4" *ngFor="let mascota of allMacotas">
 
-    <div class="product-list">
-      <div class="product-card">
-        <img
-          src="https://via.placeholder.com/150"
-          alt="Producto"
-          class="product-image"
-        />
-        <div class="product-info">  
-          <h3>NOMBRE DE LA MASCOTA</h3>
-          <p>DESCRIPCIÓN</p>
-          <p> RAZA: </p>
-          <p> EDAD: </p>
-          <p> PROPIETARIO</p>
-          <p> STATUS</p>
+        <div class="product-card">
+          <img src="{{mascota.imagen}}" alt="Producto" class="product-image" />
+          <div class="product-info">
+            <h3>{{mascota.nombre}}</h3>
+            <p>{{mascota.raza}}</p>
+            <p>{{mascota.edad}}</p>
+            <p>{{mascota.propietario}}</p>
+            <p>{{mascota.estaAdoptado}}</p>
+          </div>
+          <div class="product-actions">
+            <button class="btn btn-success edit-btn" (click)="editMascota(mascota._id)">Editar</button>
+            <button class="btn btn-danger delete-btn" (click)="deleteMascota(mascota._id)">Eliminar</button>
+          </div>
         </div>
-        <div class="product-actions">
-          <button class="btn btn-success edit-btn">Editar</button>
-          <button class="btn btn-danger delete-btn">Eliminar</button>
-        </div>
+
       </div>
-    </div>
+    </section>
   </main>
 </div>

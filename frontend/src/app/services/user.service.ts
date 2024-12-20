@@ -18,7 +18,7 @@ export class UsuariosService {
   // 3. HACER LAS PETICIONES ---------------------------------------------
 
   // Petición POST
-  postUsuarios(user: User) {
+  postUsuarios(user: User | null) {
     // para crear un usuario, necesito la ruta y el body
     return this._httpClient.post(this.URL_USUARIOS + '/crear', user);
   }
