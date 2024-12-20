@@ -20,17 +20,20 @@
   padding-left: 15px;  /* Padding solo a la izquierda */
   padding-right: 6%; /* Padding solo a la derecha */
   width: 100%;
-  height: 15vh;
+  height: auto;
 }
 
 .mi-logo {
-  width: 80%; /* Mantiene la proporción del logo */
+  width: auto; /* Mantiene la proporción del logo */
+  height: auto;
 }
 
 .navbar-nav {
+  width: auto;
+  height: auto;
   display: flex;
   justify-content: space-between; /* Espaciado entre los elementos */
-  gap: 8vw; /* Espaciado entre los elementos */
+  gap:  30px ; /* Espaciado entre los elementos */
 }
 
 .nav-item {
