@@ -4,13 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { CredencialesUser } from '../../interfaces/credenciales-user';
 import { CredencialesAdmin } from '../../interfaces/credenciales-admin';
-import { ToastrService } from 'ngx-toastr'; 
+import { ToastrService } from 'ngx-toastr';
 
-// Aqui debemos 
+// Aqui debemos
 import {ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
 import { FooterComponent } from "../../components/footer/footer.component";
 
-//import { FormsModule } from '@angular/forms'; Se usa en plantillas pero no te permiten conectar la base de datos 
+//import { FormsModule } from '@angular/forms'; Se usa en plantillas pero no te permiten conectar la base de datos
 @Component({
   selector: 'app-login',
   imports: [ReactiveFormsModule, FormsModule, RouterModule, FooterComponent],
@@ -29,7 +29,7 @@ showPassword: boolean = false;
 
 
 /*
-  trabajan con grupo de formularios  y tienen un grupo de controles 
+  trabajan con grupo de formularios  y tienen un grupo de controles
 */
 
 formularioLogin = new FormGroup({
@@ -37,10 +37,10 @@ email: new FormControl(""),
 password: new FormControl(""),
 });
 
-// esta funcion nos permite controla lo que pasa con nuestro formulario al usar el boton submit 
+// esta funcion nos permite controla lo que pasa con nuestro formulario al usar el boton submit
 loginUser(){
-  // se muestra en consola  la info que estamos recibiendo 
-  
+  // se muestra en consola  la info que estamos recibiendo
+
   const emailLogin = this.formularioLogin.value.email ;
   const passwordLogin = this.formularioLogin.value.password;
   let Credencialesingreso: CredencialesUser| null = null ;
