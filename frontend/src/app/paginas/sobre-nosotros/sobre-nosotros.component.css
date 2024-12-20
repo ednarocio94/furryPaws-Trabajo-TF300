@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
 /* Estilo del banner */
 .banner {
     width: 100%;
@@ -11,8 +12,8 @@
 
 /* Título principal */
 .title-banner {
-    font-family: 'Bevan', sans-serif; /* Aplica la fuente Bevan */
-    font-size: 4rem; /* Aumenta el tamaño de la fuente */
+    font-family: 'Bevan', sans-serif;
+    font-size: 4rem;
     font-weight: bold;
     margin-bottom: 5vh;
     text-transform: uppercase;
@@ -20,7 +21,7 @@
 }
 
 .casosexito-title {
-    font-family: 'Figtree', sans-serif; /* Aplica la fuente Figtree */
+    font-family: 'Figtree', sans-serif;
     font-size: 2em;
     margin-bottom: 5vh;
     font-weight: bold;
@@ -40,28 +41,26 @@
     font-weight: bold;
     color: white;
     display: inline-block;
-    text-align: center; /* Centra el contenido del botón */
-    vertical-align: middle; /* Asegura que el contenido se alinee correctamente */
-    transition: all 0.3s ease; /* Transición suave para el hover */
+    text-align: center;
+    vertical-align: middle;
+    transition: all 0.3s ease;
 }
 
-/* Estilo para el enlace dentro del botón */
 .button a {
     color: white;
-    text-decoration: none; /* Eliminar subrayado */
-    display: inline-block; /* Asegura que el enlace se comporte como un bloque dentro del botón */
-    line-height: normal; /* Ajusta la altura de línea para que quede bien centrado */
+    text-decoration: none;
+    display: inline-block;
+    line-height: normal;
 }
 
-/* Efecto hover para todo el botón */
 .button:hover {
-    background-color: #ffffff; /* Cambia el color de fondo del botón en hover */
+    background-color: #ffffff;
     border: solid 7px white;
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+    transform: scale(1.1);
 }
 
 .button:hover a {
-    color: rgb(0, 0, 0); /* Asegura que el texto no cambie de color en el hover */
+    color: rgb(0, 0, 0);
 }
 
 /* -------------- sobre nosotros -------------- */
@@ -71,12 +70,12 @@
 }
 
 .contenido {
-    max-width: 1200px;  /* Limita el tamaño máximo del contenido */
+    max-width: 1200px;
     width: 100%;
     height: auto;
-    margin: 0 auto;  /* Centra el contenido */
+    margin: 0 auto;
     padding: 20px;
-    text-align: center;  /* Alinea el texto al centro */
+    text-align: center;
 }
 
 .titulo {
@@ -91,7 +90,7 @@
 
 .contenido-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    grid-template-columns: 1fr;
     gap: 40px;
     align-items: center;
     margin-top: 30px;
@@ -99,7 +98,7 @@
 
 @media (min-width: 768px) {
     .contenido-grid {
-        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas más grandes */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -128,10 +127,10 @@
     border-radius: 30px;
     border: solid 7px rgb(255, 255, 255);
     text-transform: uppercase;
-    text-decoration: none; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    display: inline-block; 
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
     font-weight: bold;
 }
 
@@ -141,22 +140,20 @@
 }
 
 .button2:hover {
-    background-color: #ffffff; /* Cambia el color de fondo en hover */
-    color: #015015; /* Cambia el color de la letra en hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa en hover */
+    background-color: #ffffff;
+    color: #015015;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
     border: solid 7px #015015;
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
 }
 
 .button2 a:hover {
     text-decoration: none;
     color: inherit;
-    transform: translateY(-2px); 
+    transform: translateY(-2px);
 }
 
-
 /* ------- nuestros valores ------------- */
-
 #nuestrosValores {
     background: #f4f4f4;
     padding: 60px 20px;
@@ -192,8 +189,8 @@
 }
 
 .valor-item:hover {
-    transform: translateY(-10px); /* Eleva el elemento en hover */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
 .icono {
@@ -204,14 +201,14 @@
 }
 
 .valor-item:hover .icono {
-    color: #b41f08; /* Color de icono en hover */
+    color: #b41f08;
 }
 
 h3 {
     font-size: 1.6em;
     color: #000000;
     margin-bottom: 20px;
-    font-family: 'Bevan', cursive; /* Aplicamos la fuente Bevan */
+    font-family: 'Bevan', cursive;
 }
 
 .valor-item p {
@@ -222,17 +219,17 @@ h3 {
 
 /* Fondo colorido para cada item de valor con tonos pastel */
 .valor-item:nth-child(1) {
-    background: rgba(2, 67, 207, 0.747); /* Rosa pastel */
+    background: rgba(2, 67, 207, 0.747);
     color: #fff;
 }
 
 .valor-item:nth-child(2) {
-    background: rgba(1, 102, 1, 0.795); /* Amarillo pastel */
+    background: rgba(1, 102, 1, 0.795);
     color: #fff;
 }
 
 .valor-item:nth-child(3) {
-    background: rgba(202, 0, 0, 0.678); /* Azul pastel */
+    background: rgba(202, 0, 0, 0.678);
     color: #fff;
 }
 
@@ -244,7 +241,6 @@ h3 {
 .valor-item p {
     color: #fff;
 }
-
 
 /* Sección Testimonios */
 #testimonios {
@@ -348,3 +344,39 @@ h3 {
     line-height: 1.6;
 }
 
+/* Media queries para hacer el contenido responsive */
+@media (max-width: 500px) {
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+    }
+    .founders-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+    .valores-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .testimonios-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .founders-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1001px) {
+    .valores-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .testimonios-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .founders-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
