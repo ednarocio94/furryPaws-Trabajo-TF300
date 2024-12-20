@@ -20,7 +20,7 @@
     padding: 50px;
     height: auto;
     /* Ajusta automáticamente la altura */
-    max-width: 400px;
+    width: auto;
     /* Ancho máximo para evitar tarjetas demasiado grandes */
 }
 
@@ -131,7 +131,7 @@
         padding: 50px;
         height: auto;
         /* Ajusta automáticamente la altura */
-        max-width: 400px;
+        width: auto;
         /* Ancho máximo para evitar tarjetas demasiado grandes */
     }
 
@@ -243,7 +243,7 @@
         padding: 50px;
         height: auto;
         /* Ajusta automáticamente la altura */
-        max-width: 400px;
+        width: auto;
         /* Ancho máximo para evitar tarjetas demasiado grandes */
     }
 
@@ -328,7 +328,6 @@
     .rounded-pill {
         border-radius: 50px;
     }
-
 }
 
 @media (max-width: 500px) {
@@ -355,7 +354,7 @@
         padding: 50px;
         height: auto;
         /* Ajusta automáticamente la altura */
-        max-width: 400px;
+        width: auto;
         /* Ancho máximo para evitar tarjetas demasiado grandes */
     }
 
@@ -440,5 +439,4 @@
     .rounded-pill {
         border-radius: 50px;
     }
-
 }
