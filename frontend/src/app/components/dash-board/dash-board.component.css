@@ -12,11 +12,13 @@
   
   /* Sidebar */
   .sidebar {
-    background-color: #757677;
-    color: #fff;
+    background-color: rgb(221, 226, 228);
+    color: #0d0606;
     width: 250px;
     padding: 20px;
     flex-shrink: 0;
+    align-items: center;
+    
   }
   
   .sidebar .logo img {
@@ -27,10 +29,13 @@
   .sidebar h2 {
     font-size: 1.5em;
     margin: 20px 0;
+    
   }
   
   .sidebar p {
     margin-bottom: 20px;
+    font-family: monospace;
+    
   }
   
   .sidebar ul {
@@ -44,11 +49,13 @@
   
   .sidebar .logout-btn {
     background-color: #3498db;
+    
     color: white;
     border: none;
     padding: 10px;
     width: 100%;
     cursor: pointer;
+    border-radius: 10px;
   }
   
   .sidebar .logout-btn:hover {
@@ -76,7 +83,7 @@
   .header .add-product-btn {
     background-color: #3498db;
     color: white;
-    border: none;
+    border-radius: 10px;
     padding: 10px 15px;
     cursor: pointer;
   }
@@ -213,3 +220,25 @@
     background-color: #c82333; /* Más oscuro al pasar el ratón */
   }
   
+  .contentPaws{
+    margin-top: 8%;
+  }
+  .menu {
+    align-items: center;
+  }
+  
+.titulo{
+  color:black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size:xx-large;
+  margin: 0 auto;
+}
+
+.menu-sidebar {
+  box-shadow: 0 30px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #989696;
+    padding: 9%;
+    margin-top: 10%;
+
+}
+  /* ------------------------------ */

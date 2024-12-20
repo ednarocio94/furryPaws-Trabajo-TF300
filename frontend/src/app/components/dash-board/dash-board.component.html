@@ -3,24 +3,27 @@
     <div class="logo">
       <img src="assets/logo.png" alt="Logo" class="mi-logo" />
     </div>
-    <h2>Centro de administración</h2>
-    <nav>
-      <ul>
-        <li>Gestión de mascotas</li>
-        <li>Gestión de usuarios</li>
-      </ul>
-    </nav>
-    <button class="logout-btn">Cerrar sesión</button>
-  </aside> 
+    <div class="menu-sidebar">
+      <h2 class=" menu">Centro de administración</h2>
+      <nav>
+        <ul>
+          <li>Gestión de mascotas</li>
+          <li>Gestión de usuarios</li>
+        </ul>
+      </nav>
+      <button class="logout-btn">Cerrar sesión</button>
+    </div>
+
+  </aside>
 
   <main class="main-content">
     <div class="header">
-      <h1> Nuestras  mascotas</h1>
-      <button class="add-product-btn">Agregar nuevas mascotas</button>
+      <h1 class="titulo"> Nuestras mascotas</h1>
+      <button class="btn btn-primary add-product-btn">Agregar nuevas mascotas</button>
     </div>
-    <section class="row">
-    <div class="col-md-4"   *ngFor="let mascota of allMacotas">
-      
+    <section class="row contentPaws">
+      <div class="col-md-4" *ngFor="let mascota of allMacotas">
+
         <div class="product-card">
           <img src="{{mascota.imagen}}" alt="Producto" class="product-image" />
           <div class="product-info">
@@ -35,8 +38,8 @@
             <button class="btn btn-danger delete-btn" (click)="deleteMascota(mascota._id)">Eliminar</button>
           </div>
         </div>
-      
-    </div>
-  </section>
+
+      </div>
+    </section>
   </main>
 </div>
