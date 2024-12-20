@@ -3,11 +3,13 @@ import { MascotasService } from '../../services/mascotas.service';
 import { Mascotas } from '../../interfaces/mascotas';
 import { ToastrService } from 'ngx-toastr';
 import {ReactiveFormsModule, FormControl, FormGroup} from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-dash-board',
-  imports: [ReactiveFormsModule, NgFor,NgIf],
+  imports: [ReactiveFormsModule, NgFor, RouterLink],
   templateUrl: './dash-board.component.html',
   styleUrl: './dash-board.component.css'
 })
@@ -17,6 +19,7 @@ export class DashboardComponent {
 
 mascotasService = inject(MascotasService);
 toastrService = inject(ToastrService);
+loginService = inject(LoginService);
 
 allMacotas: Mascotas[] = [];
 
@@ -53,6 +56,13 @@ obtenerMascotas (){
     console.log(`Eliminar producto con ID: ${productId}`);
     // Lógica para eliminar un producto
   }
+
+loginout(){
+this.loginService.cierreSesion()
+
+
+}
+
 
 // Si yo quiero que se muestre al cargar el contenido de mi página -> debemos usar un método que se llama -> ngOnInit()
 ngOnInit(){

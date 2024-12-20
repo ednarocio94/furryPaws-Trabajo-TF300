@@ -7,11 +7,15 @@
       <h2 class=" menu">Centro de administración</h2>
       <nav>
         <ul>
-          <li>Gestión de mascotas</li>
+          <a routerLink="/admin"> 
+            <li>Gestión de mascotas</li>
+          </a>
+         <a routerLink="/admin/usuarios">
           <li>Gestión de usuarios</li>
+        </a>
         </ul>
       </nav>
-      <button class="logout-btn">Cerrar sesión</button>
+      <button (click)="loginout()" class="logout-btn">Cerrar sesión</button>
     </div>
 
   </aside>
