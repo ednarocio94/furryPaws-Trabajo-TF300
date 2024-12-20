@@ -5,10 +5,11 @@ import { UsuariosService } from '../../services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../../interfaces/user';
 import { Router } from '@angular/router';
+import { NavBarComponent } from "../../components/nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-registro',
-  imports: [ReactiveFormsModule, FooterComponent],
+  imports: [ReactiveFormsModule, FooterComponent, NavBarComponent],
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css'],
 })
