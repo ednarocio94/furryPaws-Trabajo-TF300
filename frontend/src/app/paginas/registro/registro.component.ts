@@ -19,21 +19,19 @@ import { NavBarComponent } from "../../components/nav-bar/nav-bar.component";
 //   private _toastrService = inject(ToastrService);
 //   private _router = inject(Router);
 
-  /*
-    Formulario
-  */
-  // formularioRegistro = new FormGroup({
-  //   fullName: new FormControl(''),
-  //   email: new FormControl(''),
-  //   password: new FormControl(''),
-  //   phone: new FormControl(''),
-  //   isAdult: new FormControl(''),
-  //   address: new FormControl(''),
-  //   type: new FormControl(''),
-  //   size: new FormControl(''),
-  //   age: new FormControl(''),
-  //   image: new FormControl(null), // Imagen opcional
-  // });
+
+  formularioRegistro = new FormGroup({
+    fullName: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+    phone: new FormControl(''),
+    isAdult: new FormControl(''),
+    address: new FormControl(''),
+    type: new FormControl(''),
+    size: new FormControl(''),
+    age: new FormControl(''),
+    image: new FormControl(null),
+  });
 
 //   onSubmit() {
 //     const nuevoUsuario = this.formularioRegistro.value;
@@ -54,5 +52,5 @@ import { NavBarComponent } from "../../components/nav-bar/nav-bar.component";
 //       }
 //     });
 //   }
-// 
+//
 
