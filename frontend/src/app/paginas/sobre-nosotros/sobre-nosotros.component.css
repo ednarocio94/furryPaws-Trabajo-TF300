@@ -1,288 +1,350 @@
-/* IMPORTAR FUENTES */
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&display=swap');
-
-/* VARIABLES */
-:root {
-    --fuente1: "Figtree", serif;
-    --fuente2: "IBM Plex Mono", monospace;
-    --color-primary: #000;
-    --color-secundary: #fff;
-    --backgroundColor: #c4c5c6;
-    --color-1: #1a8510;
-    --color-2: #012A4A;
-    --colorPrimary3: #8AC6DD;
-}
-
-/* GLOBAL */
-body {
-    font-family: var(--fuente1);
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-/* ----------------------------------------- HEADER ------------------------------------------------- */
-.header {
-    margin: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* -------- barra nav -------- */
-.container-navBar {
-    width: 100%;
-    height: 17%;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 5vw;
-    font-family: var(--fuente1);
-    font-size: large;
-    padding-left: 70px;
-    padding-right: 90px;
-}
-
-.logo-navBar img {
-    width: 15vw;
-}
-
-.navBar-list {
-    width: 45vw;
-    height: 5vh;
-    display: flex;
-    list-style: none;
-    gap: 4vw;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    background-color: rgba(128, 128, 128, 0.315);
-    border-radius: 50px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-}
-
-.navBar-list a {
-    text-decoration: none;
-    color: var(--color-primary);
-}
-
-.button-login {
-    width: 7vw;
-    height: 5vh;
-    padding: 0;
-    background-color: var(--color-1);
-    border-radius: 50px;
-    font-weight: bold;
-    border: solid 4px rgb(255, 255, 255);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-.button-login a {
-    text-decoration: none;
-    color: var(--color-secundary);
-    display: block;
-    width: 100%;
-    line-height: 5vh;
-    text-align: center;
-}
-
-.button-login:hover {
-    background-color: var(--color-secundary);
-    color: var(--color-primary);
-    border-color: var(--color-primary);
-}
-
-.button-login a:hover {
-    color: var(--color-primary);
-}
-
-/* -------------------------------- BANNER -------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+/* Estilo del banner */
 .banner {
     width: 100%;
-    height: 83%;
-    background-color: #f5f5f5;
-}
-
-.contenido-banner {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    padding-top: 3vh;
+    height: auto;
+    background: black;
     text-align: center;
-    background-color: rgba(205, 218, 220, 0.782);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 10vh;
+    border-radius: 20px 20px 0px 0px;
 }
 
+/* Título principal */
 .title-banner {
-    font-family: var(--fuente1);
-    font-weight: 900;
-    font-size: 120px;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.831);
+    font-family: 'Bevan', sans-serif; /* Aplica la fuente Bevan */
+    font-size: 4rem; /* Aumenta el tamaño de la fuente */
+    font-weight: bold;
+    margin-bottom: 5vh;
+    text-transform: uppercase;
+    color: white;
 }
 
 .casosexito-title {
-    font-family: var(--fuente1);
-    font-weight: 900;
-    font-size: 60px;
-    color: #ffffff;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.831);
-    margin-bottom: 20px;
-    text-align: center;
+    font-family: 'Figtree', sans-serif; /* Aplica la fuente Figtree */
+    font-size: 2em;
+    margin-bottom: 5vh;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
-.carousel {
-    margin-top: 20px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+/* Estilo del botón */
+.button {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border: solid 7px white;
+    background-color: black;
+    border-radius: 30px;
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    text-align: center; /* Centra el contenido del botón */
+    vertical-align: middle; /* Asegura que el contenido se alinee correctamente */
+    transition: all 0.3s ease; /* Transición suave para el hover */
 }
 
-.carousel img {
-    object-fit: cover;
-    height: 500px;
+/* Estilo para el enlace dentro del botón */
+.button a {
+    color: white;
+    text-decoration: none; /* Eliminar subrayado */
+    display: inline-block; /* Asegura que el enlace se comporte como un bloque dentro del botón */
+    line-height: normal; /* Ajusta la altura de línea para que quede bien centrado */
 }
 
-.carousel-item {
-    transition: transform 0.5s ease-in-out;
+/* Efecto hover para todo el botón */
+.button:hover {
+    background-color: #ffffff; /* Cambia el color de fondo del botón en hover */
+    border: solid 7px white;
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
 }
 
-.sobreNosotrosTexto {
-    width: 40%;
-    margin-top: 2vh;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.79);
-    font-size: 20px;
-    font-family: var(--fuente2);
+.button:hover a {
+    color: rgb(0, 0, 0); /* Asegura que el texto no cambie de color en el hover */
 }
 
-/* ---------------- SOBRE NOSOTROS ---------------- */
+/* -------------- sobre nosotros -------------- */
 #sobreNosotros {
-    text-align: center;
-    margin: 40px auto;
-    max-width: 100%;
-    background-color: rgba(205, 218, 220, 0.9);
-    padding: 70px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: #f4f4f4;
+    padding: 60px 20px;
+}
+
+.contenido {
+    max-width: 1200px;  /* Limita el tamaño máximo del contenido */
+    width: 100%;
+    height: auto;
+    margin: 0 auto;  /* Centra el contenido */
+    padding: 20px;
+    text-align: center;  /* Alinea el texto al centro */
 }
 
 .titulo {
-    font-size: 40px;
-    font-family: var(--fuente1);
-    font-weight: bolder;
-    color: #012A4A;
-    margin-bottom: 20px;
+    font-size: 3em;
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Bevan', sans-serif;
 }
 
-.contenido-flex {
-    display: flex;
-    justify-content: center;
+.contenido-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Cambia a una sola columna en pantallas pequeñas */
+    gap: 40px;
     align-items: center;
-    margin: 20px 0;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .contenido-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas más grandes */
+    }
 }
 
 .imagenSobreNosotros {
-    max-width: 40%;
-    margin-right: 20px;
+    width: 100%;
     border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.contenido p {
-    font-size: 1.2rem;
-    font-family: var(--fuente2);
-    width: 50%;
-    line-height: 1.5;
-    color: #333;
-    margin: 10px 0;
+.texto-sobre-nosotros p {
+    font-size: 1.3em;
+    color: #000000;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.texto-sobre-nosotros strong {
+    color: #fa1500;
+    text-transform: uppercase;
+}
+
+.button2 {
     padding: 20px;
-    border-radius: 20px;
+    color: #ffffff;
+    background-color: rgb(0, 94, 31);
+    border-radius: 30px;
+    border: solid 7px rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-decoration: none; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    display: inline-block; 
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; 
+    font-weight: bold;
 }
 
-/* ---------------- FUNDADORES ---------------- */
-.founders-section {
+.button2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button2:hover {
+    background-color: #ffffff; /* Cambia el color de fondo en hover */
+    color: #015015; /* Cambia el color de la letra en hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa en hover */
+    border: solid 7px #015015;
+    transform: translateY(-2px); 
+}
+
+.button2 a:hover {
+    text-decoration: none;
+    color: inherit;
+    transform: translateY(-2px); 
+}
+
+
+/* ------- nuestros valores ------------- */
+
+#nuestrosValores {
+    background: #f4f4f4;
     padding: 60px 20px;
-    background-color: #f8f9fa;
+}
+
+.valores-container {
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
-    border-bottom: 5px solid #012A4A;
+}
+
+.titulo {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Bevan', cursive;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.valor-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor-item:hover {
+    transform: translateY(-10px); /* Eleva el elemento en hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.icono {
+    font-size: 4em;
+    color: #df2716;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.valor-item:hover .icono {
+    color: #b41f08; /* Color de icono en hover */
+}
+
+h3 {
+    font-size: 1.6em;
+    color: #000000;
+    margin-bottom: 20px;
+    font-family: 'Bevan', cursive; /* Aplicamos la fuente Bevan */
+}
+
+.valor-item p {
+    font-size: 1.3rem;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* Fondo colorido para cada item de valor con tonos pastel */
+.valor-item:nth-child(1) {
+    background: rgba(2, 67, 207, 0.747); /* Rosa pastel */
+    color: #fff;
+}
+
+.valor-item:nth-child(2) {
+    background: rgba(1, 102, 1, 0.795); /* Amarillo pastel */
+    color: #fff;
+}
+
+.valor-item:nth-child(3) {
+    background: rgba(202, 0, 0, 0.678); /* Azul pastel */
+    color: #fff;
+}
+
+/* Estilos de texto para los valores */
+.valor-item h3 {
+    color: #fff;
+}
+
+.valor-item p {
+    color: #fff;
+}
+
+
+/* Sección Testimonios */
+#testimonios {
+    background: #f4f4f4;
+    padding: 60px 20px;
+}
+
+.testimonios-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.testimonio-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.foto-cliente {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.cita {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.nombre-cliente {
+    font-size: 1.3em;
+    color: #333;
+    font-weight: 600;
+}
+
+.rol-cliente {
+    font-size: 1em;
+    color: #777;
+}
+
+/* Sección Fundadores */
+.founders-section {
+    background: #fff;
+    padding: 60px 20px;
+}
+
+.titulo-Fundadores {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
 }
 
 .founders-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .founder-card {
-    width: 300px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    padding: 20px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
-
-.founder-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .founder-photo {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 15px;
-    border: 5px solid #012A4A;
-    transition: transform 0.3s ease;
-}
-
-.founder-card:hover .founder-photo {
-    transform: scale(1.1);
+    margin-bottom: 20px;
 }
 
 .founder-card h3 {
-    font-family: var(--fuente2);
-    font-size: 1.5rem;
-    color: #012A4A;
-    margin-bottom: 10px;
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .founder-card p {
-    font-family: var(--fuente1);
-    font-size: 1rem;
+    font-size: 1.1em;
     color: #555;
-    line-height: 1.5;
-    padding: 0 10px;
+    line-height: 1.6;
 }
 
-.cta-btn {
-  display: inline-block;
-  padding: 15px 40px;
-  background-color: #083e6b; /* Color verde para el botón */
-  border: solid 5px white;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.315); /* Efecto sombra en hover */
-}
