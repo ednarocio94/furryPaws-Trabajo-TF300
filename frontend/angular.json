@@ -90,7 +90,7 @@
             "assets": [ 
               "public/assets",
               {
-                "glob": "*/",
+                "glob": "**/*",
                 "input": "public"
               }
 
